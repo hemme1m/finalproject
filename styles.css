@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+html {
+/*    background-color: #023E54;
+    background: linear-gradient(325deg, rgba(2,62,84, 0.75), rgba(16,170,192, 0.55));*/
+    min-height: 700px;
+    min-width: 580px;
+    font-family: 'Raleway', sans-serif;
+    /*more info on how scrollbar trick works: 
+    https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll;*/
+    overflow: scroll;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    height: 0px;
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+body {
+    background-color: #023E54;
+    background: linear-gradient(325deg, rgba(2,62,84, 0.75), rgba(16,170,192, 0.55));
+    margin: 25px auto;
+    max-width: 700px;
+}
+
+header {
+    padding: 15px 5px;
+    background-color: whitesmoke;
+    border: 1px solid silver;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: -4px 5px 6px #023E54;
+}
+
+#pageHeader {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: #023E54;
+}
+nav a:hover {
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0 2px;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    color: #023E54;
+    width: calc(45% - 20px);
+    height: 50px;
+    border: 1px solid;
+    border-radius: 15px;
+    line-height: 50px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 0;
+    background: linear-gradient(355deg, #DDD, #AAA);
+    font-size: 18px;
+    font-weight: bold;
+    outline: none;
+    margin-top: 10px;
+}
+
+button:active {
+    padding-top: 1px;
+    padding-left: 1px;
+    background: linear-gradient(355deg, #AAA, #DDD);
+}
+
+#buttonDiv {
+    list-style: none;
+    margin: 0 2px;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+main {
+    min-height: 685px;
+    padding: 15px 5px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    box-shadow: -4px 5px 6px #023E54;
+}
+main > div {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: whitesmoke;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}

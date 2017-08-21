@@ -1,23 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="nutrientApp">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- insert page title
-        <title></title> 
-        -->
+        <title>Meet Your Macros | Macronutrient Tracking</title>        
+        <link rel="stylesheet" href="libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="libs/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="styles.css">
         <!-- link to scripts in head
         <script src=""></script>
         -->
-        <!-- link to angular app file -->
-        <script src="app.js" charset="utf-8"></script>
     </head>
     <body>
-        
+        <header>
+            <div id="pageHeader"><h2>MEET YOUR MACROS HEADER</h2></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <div class="dropdown">
+                        <li><a href="#" class="dropbtn">Food Groups <b class="caret"></b></a>
+                            <div class="dropdown-content">
+                            <a href="#!/grps/all">All Groups</a>
+                            <a href="#!/grps/grains">Grains</a>
+                            <a href="#!/grps/fruits">Fruits</a>
+                            <a href="#!/grps/vegetables">Vegetables &amp; Legumes</a>
+                            <a href="#!/grps/proteins">Proteins</a>
+                            <a href="#!/grps/dairy">Dairy</a>
+                            <a href="#!/grps/fats">Fats &amp; Sweets</a>
+                            </div>
+                        </li>
+                    </div>
+                    <li><a href="#!/suggestions">Food Suggestions</a></li>
+                    <li><a href="#!/total">Nutrient Totals</a></li>
+                </ul>
+            </nav>
+        </header>
+    <main>
+        <div ng-view="">Loading...</div>
+    </main>
     <!-- link to scripts at bottom of page
     <script src=""></script>
     -->
+    <script src="libs/angular.min.js" charset="utf-8"></script>
+    <script src="libs/angular-route.min.js"></script>
+    <script src="libs/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-animate.min.js"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
     </body>
 </html>
