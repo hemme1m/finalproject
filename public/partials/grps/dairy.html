@@ -1,7 +1,7 @@
 <!-- Dairy Things -->
 <div class="row">
   <div class="col-md-2"></div>
-  <div class="col-md-2 col-xs-6"><p> <img src="food.jpg"><br>{{dairyItems[0].name}}</p></div>
+  <div class="col-md-2 col-xs-6"><p ng-click="open()"> <img src="food.jpg"><br>{{dairyItems[0].name}}</p></div>
   <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{dairyItems[1].name}}</p></div>
   <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{dairyItems[2].name}}</p></div>
   <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{dairyItems[3].name}}</p></div>
@@ -14,3 +14,17 @@
   <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{dairyItems[6].name}}</p></div>
   <div class="col-md-3 col-xs-6"></div>
 </div>
+
+
+ <div modal="showModal" close="cancel()">
+    <div class="modal-header">
+        <h4>Modal Dialog</h4>
+    </div>
+    <div class="modal-body">
+        <p>Example paragraph with some text.</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success" ng-click="ok()">Okay</button>
+      <button class="btn" ng-click="cancel()">Cancel</button>
+    </div>
+  </div>

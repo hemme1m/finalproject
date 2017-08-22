@@ -9,6 +9,18 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
 	$scope.proteinItems = foodSelectionService.getProteinItems();
 	$scope.vegItems = foodSelectionService.getVegItems();
 
+
+    $scope.open = function() {
+        $scope.showModal = true;
+    };
+
+    $scope.ok = function() {
+        $scope.showModal = false;
+    };
+
+    $scope.cancel = function() {
+        $scope.showModal = false;
+    };
 });
 
 
