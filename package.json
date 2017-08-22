@@ -1,0 +1,36 @@
+{
+  "name": "final-project",
+  "version": "1.0.0",
+  "description": "nutrient app project",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "pg": "^7.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hemme1m/finalproject.git"
+  },
+  "keywords": [
+    "nutrient",
+    "tracker",
+    "nutrient",
+    "log",
+    "food",
+    "tracker",
+    "food",
+    "log"
+  ],
+  "author": "Antoyrie Green, Denzel Anderson, Laura Senko, Mark Hemmert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hemme1m/finalproject/issues"
+  },
+  "homepage": "https://github.com/hemme1m/finalproject#readme"
+}
