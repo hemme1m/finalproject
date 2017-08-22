@@ -19,7 +19,7 @@ app.config(function($routeProvider) {
 
     $routeProvider.when("/grps/dairy", {
     	templateUrl: "partials/grps/dairy.html",
-    	// controller: "foodGrpController"
+    	controller: "foodGrpController"
     });
 
     $routeProvider.when("/grps/fats", {
