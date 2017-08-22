@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const pg = require('pg');
 
 const app = express();
 // Serve files from public folder. That's where all of our HTML, CSS and Angular JS are.
@@ -11,16 +10,11 @@ app.use(bodyParser.json());
 // TODO Set up access to the database via a connection pool. You will then use
 // the pool for the tasks below.
 
-var pool = new pg.Pool({
-	user: "postgres",
-	password: "mark1",
-	host: "localhost",
-	port: 5432,
-	database: "postgres",
-	ssl: false
-});
+
 
 //pool queries here
+
+var pool = require("./pg-connection-pool");
 
 var port = process.env.PORT || 5000;
 app.listen(port, function () {

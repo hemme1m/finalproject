@@ -1,21 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
-img{
-  width: 71%;
-  border-radius: 54%;
+
+img {
+  width: 70%;
+  border-radius: 50%;
 }
-p{
+
+p {
   border: 1px solid red;
     border-radius: 50%;
     padding: 6px;
     opacity: 0.3;
 }
+
 p:hover{
-  transform: scale(1.5);
+  /*transform: scale(1.5);*/
   opacity: 1;
 }
+
 .row{
   margin-top: 20px;
 }
+
 html {
 /*    background-color: #023E54;
     background: linear-gradient(325deg, rgba(2,62,84, 0.75), rgba(16,170,192, 0.55));*/
