@@ -9,6 +9,7 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
 	$scope.proteinItems = foodSelectionService.getProteinItems();
 	$scope.vegItems = foodSelectionService.getVegItems();
 
+    $scope.allItems = $scope.dairyItems.concat($scope.fatItems).concat($scope.fruitItems).concat($scope.grainItems).concat($scope.proteinItems).concat($scope.vegItems);
 
     $scope.open = function() {
         $scope.showModal = true;

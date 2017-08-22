@@ -1,38 +1,8 @@
 <!-- All the Proteins -->
-<div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-2 col-xs-6"><p> <img src="food.jpg"> <br>{{proteinItems[0].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"> <br>{{proteinItems[1].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"> <br>{{proteinItems[2].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"> <br>{{proteinItems[3].name}}</p></div>
-  <div class="col-md-2"></div>
-</div>
-<div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-2 col-xs-6"><p> <img src="food.jpg"> <br>{{proteinItems[4].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"> <br>{{proteinItems[5].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"> <br>{{proteinItems[6].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"> <br>{{proteinItems[7].name}}</p></div>
-  <div class="col-md-2"></div>
-</div>
-<div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-2 col-xs-6"><p> <img src="food.jpg"> <br>{{proteinItems[8].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"> <br>{{proteinItems[9].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"> <br>{{proteinItems[10].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"> <br>{{proteinItems[11].name}}</p></div>
-  <div class="col-md-2"></div>
-</div>
-<div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-2 col-xs-6"><p> <img src="food.jpg"> <br>{{proteinItems[12].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"> <br>{{proteinItems[13].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"> <br>{{proteinItems[14].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"> <br>{{proteinItems[15].name}}</p></div>
-  <div class="col-md-2"></div>
-</div>
-<div class="row">
-  <div class="col-md-5 col-xs-3"></div>
-  <div class="col-md-2 col-xs-6"><p> <img src="food.jpg"> <br>{{proteinItems[16].name}}</p></div>
-  <div class="col-md-5 col-xs-3"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-xs-6" ng-repeat="proteinItem in proteinItems">
+            <p><img src="food.jpg"><br>{{proteinItem.name}}</p>
+        </div>
+    </div>
 </div>
