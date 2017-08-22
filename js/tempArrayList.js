@@ -145,3 +145,36 @@ var grains = [
 	cal: 110, carbs: 22, protein: 2, fat: 1.5, meal: ['lunch', 'dinner']} 
 ];
 
+var fruit = [
+	{name: "apple", servings: 1, servSize: 242, group: "fruit", 
+	cal: 126, carbs: 33, protein: 0.6, fat: 0.4, meal: ['breakfast','lunch']},
+	{name: "banana", servings: 1, servSize: 126, group: "fruit", 
+	cal: 112, carbs: 29, protein: 1.4, fat: 0.4, meal: ['breakfast','lunch']},
+	{name: "cantaloupe", servings: 1, servSize: 134, group: "fruit", 
+	cal: 45, carbs: 11, protein: 1.1, fat:0.3, meal: ['breakfast','lunch']},
+	{name: "grapes", servings: 1, servSize: 100, group: "fruit",
+	cal: 67, carbs: 17, protein: 0.6, fat: 0.4, meal: ['breakfast','lunch']},
+	{name: "grapefruit", servings: 1, servSize: 154, group: "fruit",
+	cal: 65, carbs: 16, protein: 1.2, fat: 0.2, meal: ['breakfast','lunch']},
+	{name: "cherries", servings: 1, servSize: 100, group: "fruit", 
+	cal: 50, carbs: 12, protein: 1, fat: 0.3, meal: ['breakfast','lunch']},
+	{name: "kiwi", 	servings: 1, servSize: 148, group: "fruit", 
+	cal: 90, carbs: 22, protein: 1.7, fat: 0.8, meal: ['breakfast','lunch']},
+	{name: "oranges", servings: 1, servSize: 100, group: "fruit", 
+	cal: 47, carbs: 12, protein: 0.9, fat: 0.1, meal: ['breakfast','lunch']},
+	{name: "plum", servings: 1, servSize: 151, group: "fruit", 
+	cal: 69, carbs: 17, protein: 1.1, fat: 0.4, meal: ['breakfast','lunch']},
+	{name: "pineapple", servings: 1, servSize: 100, group: "fruit", 
+	cal: 50, carbs: 13, protein: 0.5, fat: 0.1, meal: ['breakfast','lunch']},
+	{name: "strawberries", servings: 1, servSize: 147, group: "fruit", 
+	cal: 48, carbs: 11, protein: 1, fat: 0.4, meal: ['breakfast','lunch']},
+	{name: "cranberries", servings: 1, servSize: 100, group: "fruit", 
+	cal: 46, carbs: 12, protein: 0.4, fat: 0.1, meal: ['breakfast','lunch']},
+	{name: "mango", servings: 1, servSize: 100, group: "fruit", 
+	cal: 60, carbs: 15, protein: 0.8, fat: 0.4, meal: ['breakfast','lunch']},
+	{name: "peaches", servings: 1, servSize: 147, group: "fruit", 
+	cal: 58, carbs: 14, protein: 1.3, fat: 0.4, meal: ['breakfast','lunch']},
+	{name: "dates", servings: 1, servSize: 100, group: "fruit", 
+	cal: 282, carbs: 75, protein: 2.5, fat: 0.4, meal: ['breakfast','lunch']},
+];
+
