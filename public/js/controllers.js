@@ -11,7 +11,9 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
 
 
     $scope.open = function() {
+        console.log("open function");
         $scope.showModal = true;
+        
     };
 
     $scope.ok = function() {
