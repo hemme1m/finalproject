@@ -137,7 +137,7 @@ app.factory("foodSelectionService", function() {
 			{name: "eggs", servings: 1, servSize: "2 large eggs", group: "proteins",
 			cal: 156, carbs: 1.2, protein: 12, fat: 10, meal: ['breakfast', 'lunch'], img: "/public/imgs/protein/eggs.jpeg"},
 			{name: "lamb", servings: 1, servSize: "3 oz", group: "proteins",
-			cal: 250, carbs: 0, protein: 21, fat: 18, meal: ['dinner'], "/public/imgs/protein/lamb.jpeg"},
+			cal: 250, carbs: 0, protein: 21, fat: 18, meal: ['dinner'], img: "/public/imgs/protein/lamb.jpeg"},
 			{name: "ham", servings: 1, servSize: "1 cup", group: "proteins",
 			cal: 203, carbs: 2.1, protein: 29, fat: 8, meal: ['lunch', 'dinner'], img: "/public/imgs/protein/ham.jpeg"},
 			{name: "pork chop", servings: 1, servSize: "219g (or 1 pork chop)", group: "proteins",

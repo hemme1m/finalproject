@@ -109,6 +109,7 @@ main {
     background-color: whitesmoke;
     box-shadow: -4px 5px 6px #023E54;
 }
+
 main > div {
     padding: 15px;
     text-align: center;
