@@ -39,12 +39,12 @@ app.config(function($routeProvider) {
 
     $routeProvider.when("/grps/proteins", {
     	templateUrl: "partials/grps/proteins.html",
-    	// controller: "foodGrpController"
+    	 controller: "foodGrpController"
     });
 
     $routeProvider.when("/grps/vegetables", {
     	templateUrl: "partials/grps/vegetables.html",
-    	// controller: "foodGrpController"
+    	 controller: "foodGrpController"
     });
 
     $routeProvider.otherwise({
