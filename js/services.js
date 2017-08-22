@@ -201,7 +201,12 @@ app.factory("foodSelectionService", function() {
 	}
 
 	return {
-		getDairyItems: getDairyItems
+		getDairyItems: getDairyItems,
+		getFatItems: getFatItems,
+		getFruitItems: getFruitItems,
+		getGrainItems: getGrainItems,
+		getProteinItems: getProteinItems,
+		getVegItems: getVegItems
 	};
 
 
