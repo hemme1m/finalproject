@@ -1,32 +1,8 @@
 <!-- All the Fruits -->
-<div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-2 col-xs-6"><p> <img src="food.jpg"><br>{{fruitItems[0].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{fruitItems[1].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{fruitItems[2].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{fruitItems[3].name}}</p></div>
-  <div class="col-md-2"></div>
-</div>
-<div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-2 col-xs-6"><p> <img src="food.jpg"><br>{{fruitItems[4].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{fruitItems[5].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{fruitItems[6].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{fruitItems[7].name}}</p></div>
-  <div class="col-md-2"></div>
-</div>
-<div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-2 col-xs-6"><p> <img src="food.jpg"><br>{{fruitItems[8].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{fruitItems[9].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{fruitItems[10].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{fruitItems[11].name}}</p></div>
-  <div class="col-md-2"></div>
-</div>
-<div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-2 col-xs-6"><p> <img src="food.jpg"><br>{{fruitItems[12].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{fruitItems[13].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{fruitItems[14].name}}</p></div>
-  <div class="col-md-3"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-xs-6" ng-repeat="fruitItem in fruitItems">
+            <p><img src="food.jpg"><br>{{fruitItem.name}}</p>
+        </div>
+    </div>
 </div>

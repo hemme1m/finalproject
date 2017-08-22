@@ -1,23 +1,8 @@
 <!-- Fats and Sweets -->
-<div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-2 col-xs-6"><p> <img src="food.jpg"><br>{{fatItems[0].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{fatItems[1].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{fatItems[2].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{fatItems[3].name}}</p></div>
-  <div class="col-md-2 col-xs-6"></div>
-</div>
-<div class="row">
-  <div class="col-md-2 col-xs-6"></div>
-  <div class="col-md-2 col-xs-6"><p> <img src="food.jpg"><br>{{fatItems[4].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{fatItems[5].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{fatItems[6].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{fatItems[7].name}}</p></div>
-  <div class="col-md-2 col-xs-6"></div>
-</div>
-<div class="row">
-  <div class="col-md-4"></div>
-  <div class="col-md-2 col-xs-6"><p> <img src="food.jpg"><br>{{fatItems[8].name}}</p></div>
-  <div class="col-md-2 col-xs-6"><p><img src="food.jpg"><br>{{fatItems[9].name}}</p></div>
-  <div class="col-md-4"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-xs-6" ng-repeat="fatItem in fatItems">
+            <p><img src="food.jpg"><br>{{fatItem.name}}</p>
+        </div>
+    </div>
 </div>
