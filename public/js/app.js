@@ -1,4 +1,4 @@
-var app = angular.module("nutrientApp", ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'ui.bootstrap.modal']);
+var app = angular.module("nutrientApp", ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'chart.js']);
 
 app.config(function($routeProvider) {
 

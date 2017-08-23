@@ -48,6 +48,9 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
         $scope.carbTotal = totals.carbTotal;
         $scope.proteinTotal = totals.proteinTotal;
         $scope.fatTotal = totals.fatTotal;
+
+        $scope.foodLabels = ["Carbohydrates", "Protein", "Fat"];
+        $scope.foodData = [$scope.carbTotal, $scope.proteinTotal, $scope.fatTotal];
     });
 });
 
