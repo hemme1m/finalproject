@@ -5,19 +5,19 @@ app.factory("foodSelectionService", function($http) {
 	function getDairyItems() {
 		var dairyItems = [
 			{name: "1% milk", servings: 1, servSize: "1 cup", group: "dairy",
-			cal: 103, carbs: 12, protein: 8, fat: 2.4, meal: ['breakfast', 'lunch', 'dinner'], img: "/public/imgs/dairy/milk.jpeg"},
+			cal: 103, carbs: 12, protein: 8, fat: 2.4, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/dairy/milk.jpeg"},
 			{name: "almond milk", servings: 1, servSize: "1 cup", group: "dairy",
-			cal: 30, carbs: 1, protein: 1, fat: 2.5, meal: ['breakfast', 'lunch', 'dinner'], img: "/public/imgs/dairy/almondMilk.jpeg"},
+			cal: 30, carbs: 1, protein: 1, fat: 2.5, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/dairy/almondMilk.jpeg"},
 			{name: "coconut milk", servings: 1, servSize: "1 cup", group: "dairy",
-			cal: 45, carbs: 1, protein: 0, fat: 2.5, meal: ['breakfast', 'lunch', 'dinner'], img: "/public/imgs/dairy/coconutMilk.jpeg"},
+			cal: 45, carbs: 1, protein: 0, fat: 2.5, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/dairy/coconutMilk.jpeg"},
 			{name: "soy milk", servings: 1, servSize: "1 cup ", group: "dairy",
-			cal: 110, carbs: 9, protein: 8, fat: 4.5, meal: ['breakfast', 'lunch', 'dinner'], img: "/public/imgs/dairy/soyMilk.jpeg"},
+			cal: 110, carbs: 9, protein: 8, fat: 4.5, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/dairy/soyMilk.jpeg"},
 			{name: "greek yogurt", servings: 1, servSize: "170g", group: "dairy",
-			cal: 100, carbs: 6, protein: 17, fat: 0.7, meal: ['breakfast', 'lunch'], img: "/public/imgs/dairy/yogurt.jpeg"},
+			cal: 100, carbs: 6, protein: 17, fat: 0.7, meal: ['breakfast', 'lunch'], img: "imgs/dairy/yogurt.jpeg"},
 			{name: "cheddar cheese", servings: 1, servSize: "1oz", group: "dairy",
-			cal: 114, carbs: 0.4, protein: 7, fat: 9, meal: ['breakfast', 'lunch', 'dinner'], img: "/public/imgs/dairy/cheese.jpeg"},
+			cal: 114, carbs: 0.4, protein: 7, fat: 9, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/dairy/cheese.jpeg"},
 			{name: "plain cream cheese", servings: 1, servSize: "1oz", group: "dairy",
-			cal: 100, carbs: 1, protein: 2, fat: 10, meal: ['breakfast'], img: "/public/imgs/dairy/creamCheese.jpeg"}
+			cal: 100, carbs: 1, protein: 2, fat: 10, meal: ['breakfast'], img: "imgs/dairy/creamCheese.jpeg"}
 		];
 		return dairyItems;
 	};

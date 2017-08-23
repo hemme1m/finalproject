@@ -1,9 +1,52 @@
-Suggestions Page
+Suggestions Page Change
+<h1>Random Menu Selections</h1>
 
 <div class="container">
-    <div class="row">
-    	<div class="col-md-3 col-xs-6" ng-repeat="dairyItem in dairyItems">
-            <p><img src="food.jpg"><br>{{dairyItem.name}}</p>
-        </div>
+    <div class="row" class="col-md-8 col-sm-6 xs-12" >
+    	<h2 class="rowHeading">Dairy Items</h2>
+    	<div class="sug">
+    		<div class= "randRow" class="col-md-1 col-sm-6 xs-12 class="dairyRow" ng-repeat="item in dairyRandItems track by $index">
+
+            <p class="suggestionInfo"><img class= "suggestImg" src="{{item.img}}"><br>{{item.name}}</p>
+        	</div>
+
+
     </div>
+
+         <div class="col-md-4 col-sm-6 xs-12">
+         <p>Current Servings: </p>
+         <p>Goal Servings: </p>
+        <button class="btn" ng-click="randDairyItems();">Random Dairy</button>  
+        </div>
+
+
+<!--
+  <div class="row" class="col-md-8 col-sm-6 xs-12" >
+    	<h2 class="rowHeading">Vegetable Items</h2>
+    	<div class="sug">
+    		<div class= "randRow" class="col-md-1 col-sm-6 xs-12 class="dairyRow" ng-repeat="item in totalRandItems track by $index">
+
+            <p class="suggestionInfo"><img class= "suggestImg" src="{{item.img}}"><br>{{item.name}}</p>
+        	</div>
+
+
+    </div>
+
+         <div class="col-md-4 col-sm-6 xs-12">
+         <p>Current Servings: </p>
+         <p>Goal Servings: </p>
+        <button class="btn" ng-click="randVegItems();">Random Vegetable</button>  
+        </div>        
+
+-->
+
 </div>
+
+
+
+
+
+   <!--<p>{{totalRandItems}}</p> 
+   <<span class="suggestionInfo" > {{totalRandItems.name}} </span>
+   <img src= "{{totalRandItems.img}}" />
+   </div>-->

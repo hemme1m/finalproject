@@ -142,6 +142,8 @@ main > div {
 
 .container  {
     max-width: 100%;
+    border: 2px solid black;\
+    display: inline-block;
 }
 
 .hideForm {
@@ -150,4 +152,38 @@ main > div {
 
 .showForm {
     display: block;
+}
+
+
+.row {
+    padding: 0px 0px;
+    margin: 0%;
+    max-width: 100%;
+}
+
+.rowHeading {
+    text-align: left;
+}
+
+.suggestImg {
+    width: 70%;
+    padding: 0%;
+    margin: 0%;
+}
+
+.randRow {
+    display: inline-block;
+    padding: 0px 0px;
+    margin: 0%;
+    max-width:20%;
+    border: 2px solid black;
+}
+
+.suggestionInfo {
+    width: 100%;
+}
+.sug{
+    display: inline-block;
+     width: 66%;
+    border-left: 1px solid black;
 }

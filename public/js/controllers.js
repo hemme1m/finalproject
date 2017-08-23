@@ -37,3 +37,69 @@ app.controller("totalController", function($scope, totalService) {
     });
 });
 
+app.controller("suggestionController", function($scope, foodSelectionService) {
+    var dairyItems = foodSelectionService.getDairyItems();
+
+    $scope.dairyRandItems = [];
+
+
+        var item = {};
+        var dairyItems = foodSelectionService.getDairyItems();
+        
+
+        for (var i = 0; i < 5; i++) {
+        item = dairyItems[Math.floor(Math.random() * dairyItems.length)];    
+        $scope.dairyRandItems.push(item);
+        console.log($scope.dairyRandItems);
+        }
+
+        $scope.randDairyItems = function () {
+            $scope.dairyRandItems = [];
+
+            var item = {};
+            var dairyItems = foodSelectionService.getDairyItems();
+        
+
+            for (var i = 0; i < 5; i++) {
+            item = dairyItems[Math.floor(Math.random() * dairyItems.length)];    
+            $scope.dairyRandItems.push(item);
+            console.log($scope.dairyRandItems);
+            }
+        }
+
+
+
+/*
+        $scope.randVegItems = function () {
+            $scope.totalRandItems = [];
+
+            var item = {};
+            var vegItems = foodSelectionService.getVegItems();
+        
+
+            for (var i = 0; i < 5; i++) {
+            item = vegItems[Math.floor(Math.random() * vegItems.length)];    
+            $scope.totalRandItems.push(item);
+            console.log($scope.totalRandItems);
+        }
+        }
+
+        $scope.randDairyItems = function () {
+            $scope.totalRandItems = [];
+
+            var item = {};
+            var dairyItems = foodSelectionService.getDairyItems();
+        
+
+            for (var i = 0; i < 5; i++) {
+            item = dairyItems[Math.floor(Math.random() * dairyItems.length)];    
+            $scope.totalRandItems.push(item);
+            console.log($scope.totalRandItems);
+        }
+        }
+
+        
+ */   
+
+
+});
