@@ -11,10 +11,19 @@ app.use(bodyParser.json());
 // the pool for the tasks below.
 
 
+var pool = require("./pg-connection-pool");
 
 //pool queries here
 
-var pool = require("./pg-connection-pool");
+app.get("/api/total", function(req, res) {
+	pool.query("SELECT * FROM nutrientlog").then(function(result) {
+		res.send(result.rows);
+	}).catch(function(err) {
+		console.log(err);
+		res.status(500);
+		res.send("Server Error");
+	});
+});
 
 var port = process.env.PORT || 5000;
 app.listen(port, function () {

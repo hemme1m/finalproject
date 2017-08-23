@@ -1,0 +1,13 @@
+<p class="foodIcon" ng-click="selected.value = $index"><img src="food.jpg"><br>{{item.name}}</p>
+<div ng-if="selected.value === $index">
+    <h1>Nutrition Facts</h1>
+    <hr>
+    <p>Serving Size: {{item.servSize}}</p>
+    <p>Calories: {{item.cal}}</p>
+    <p>Carbs: {{item.carbs}}g</p>
+    <p>Protein: {{item.protein}}g</p>
+    <p>Fats: {{item.fat}}g</p>
+    <hr>
+    <button class="btn btn-success" ng-click="ok()">Add Food</button>
+    <button class="btn btn-danger" ng-click="selected.value = null; cancel()">Cancel</button>
+</div>

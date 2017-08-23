@@ -11,51 +11,23 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
 
     $scope.allItems = $scope.dairyItems.concat($scope.fatItems).concat($scope.fruitItems).concat($scope.grainItems).concat($scope.proteinItems).concat($scope.vegItems);
 
-    $scope.open = function() {
-        console.log("open function");
-        $scope.showModal = true;
-        
-    };
+    $scope.foodForm = false;
 
-    $scope.ok = function() {
-        $scope.showModal = false;
+    $scope.sendFood = function() {
+        $scope.foodForm = false;
     };
 
     $scope.cancel = function() {
-        $scope.showModal = false;
+        console.log("cancel function");
     };
 });
 
+app.controller("totalController", function($scope, totalService) {
+    $scope.formItem = {};
 
-    // var app = angular.module("kitchsinkApp");
+    // Load the cart data on page load.
+    totalService.getAllItems().then(function(items) {
+        $scope.items = items;
+    });
+});
 
-    // app.controller("primeFactorsController", function($scope, $timeout, primeFactorsService) {
-
-	   //  $scope.factors = [];
-
-    //     $scope.setFactors = function(num) {
-    //     	var holder = primeFactorsService.setPrimeFactors(num);
-    //         $scope.factors = [];
-    //         //setTimeout...
-    //         // $timeout(function() {
-    //     	holder.forEach(function(factor) {
-    //     		$timeout(function() {
-    //     			$scope.factors.push(factor);
-    //     		}, 250);
-    //         });
-	   //      // }, 250);
-    //     }
-
-    //     $scope.removeDivs = function() {
-    //     	for (var i = 0; i <= $scope.factors.length; i++) {
-	   //      	var el = angular.element(document.querySelector(".primeFactors"));
-	   //      	el.remove();
-	   //      	console.log("Hey");
-	   //      }
-    //     }
-
-    //     $scope.allTheFunctions = function(num) {
-    //     	$scope.removeDivs();
-    //     	$scope.setFactors(num);
-    //     }
-    // })
