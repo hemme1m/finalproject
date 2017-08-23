@@ -29,15 +29,16 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
     };
 
     $scope.addItem = function(item){
-        foodSelectionService.addItem(item);
+        foodSelectionService.addItem(item).then(function(){
 
-        foodSelectionService.getAllItems().then(function(items) {
-            $scope.items = items;
-            getTotals(items);
-            $scope.calTotal = totals.calTotal;
-            $scope.carbTotal = totals.carbTotal;
-            $scope.proteinTotal = totals.proteinTotal;
-            $scope.fatTotal = totals.fatTotal;
+            foodSelectionService.getAllItems().then(function(items) {
+                $scope.items = items;
+                getTotals(items);
+                $scope.calTotal = totals.calTotal;
+                $scope.carbTotal = totals.carbTotal;
+                $scope.proteinTotal = totals.proteinTotal;
+                $scope.fatTotal = totals.fatTotal;
+            });
         });
     };
 
