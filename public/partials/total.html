@@ -1,1 +1,27 @@
-Totals Page
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Serving Size</th>
+            <th>Food Group</th>
+            <th>Calories</th>
+            <th>Carbohydrates</th>
+            <th>Protein</th>
+            <th>Fat</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in items | orderBy: 'id'" ng-cloak>
+            <td>{{item.name}}</td>
+            <td>{{item.servsize}}</td>
+            <td>{{item.group}}</td>
+            <td>{{item.cal}}</td>
+            <td>{{item.carbs}}</td>
+            <td>{{item.protein}}</td>
+            <td>{{item.fat}}</td>
+            <td></td>
+                <!--<button type="button" class="btn btn-default" ng-click="deleteItem(item)">Delete</button>-->
+        </tr>
+    </tbody>
+</table>

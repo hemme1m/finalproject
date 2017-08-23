@@ -120,7 +120,7 @@ app.factory("foodSelectionService", function() {
 			cal: 110, carbs: 22, protein: 2, fat: 1.5, meal: ['lunch', 'dinner'], img: "/public/imgs/grains/corntortilla.jpeg"}
 		];
 		return grainItems;
-	}
+	};
 
 	function getProteinItems() {
 		var proteinItems = [
@@ -160,7 +160,7 @@ app.factory("foodSelectionService", function() {
 			cal: 129, carbs: 0, protein: 28, fat: 1.2, meal: ['dinner'], img: "/public/imgs/protein/lobster.jpg"}
 		];
 		return proteinItems;
-	}
+	};
 
 	function getVegItems () {
 		var vegItems = [
@@ -198,7 +198,7 @@ app.factory("foodSelectionService", function() {
 			cal: 117, carbs: 21, protein: 7.9, fat: 0.6, meal: ["lunch", "dinner"], img: "/public/imgs/veg/peas.jpeg"}
 		];
 		return vegItems;
-	}
+	};
 
 	return {
 		getDairyItems: getDairyItems,
@@ -208,35 +208,13 @@ app.factory("foodSelectionService", function() {
 		getProteinItems: getProteinItems,
 		getVegItems: getVegItems
 	};
-
-
 });
 
+app.service("totalService", function($http) {
+    this.getAllItems = function() {
+        return $http.get("/api/total").then(function(response) {
+            return response.data;
+        });
+    };
+});
 
-
-
-
-
-
-
-
-    // var app = angular.module("kitchsinkApp");
-
-    // app.factory("primeFactorsService", function() {
-
-    //     function setPrimeFactors(inputNumber) {
-    //         var factors = [];
-    //         for (var i = 2; i <= inputNumber; i++) {
-    //             while ((inputNumber % i) === 0) {
-    //                 factors.push(i);
-    //                 inputNumber /= i;
-    //             }
-    //         }
-    //         return factors;
-    //     };
-
-    //     return {
-    //         setPrimeFactors: setPrimeFactors
-    //     };
-
-    // });

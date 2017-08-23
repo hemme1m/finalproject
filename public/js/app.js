@@ -9,7 +9,7 @@ app.config(function($routeProvider) {
 
     $routeProvider.when("/total", {
         templateUrl: "partials/total.html",
-        // controller: "totalController"
+        controller: "totalController"
     });
 
     $routeProvider.when("/grps/all", {
@@ -51,4 +51,11 @@ app.config(function($routeProvider) {
         templateUrl: "partials/landing.html"
     });
 
+});
+
+app.directive("nutritionInfo", function() {
+    return {
+        templateUrl: 'partials/nutrinfo.html',
+        replace: false
+    }
 });
