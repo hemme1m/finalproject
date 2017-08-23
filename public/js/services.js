@@ -1,6 +1,6 @@
 var app = angular.module('nutrientApp');
 
-app.factory("foodSelectionService", function() {
+app.factory("foodSelectionService", function($http) {
 
 	function getDairyItems() {
 		var dairyItems = [
@@ -200,13 +200,19 @@ app.factory("foodSelectionService", function() {
 		return vegItems;
 	};
 
+	function addItem(item){
+		return $http.post("/api/item", item);
+		console.log("service: item added");
+	};
+
 	return {
 		getDairyItems: getDairyItems,
 		getFatItems: getFatItems,
 		getFruitItems: getFruitItems,
 		getGrainItems: getGrainItems,
 		getProteinItems: getProteinItems,
-		getVegItems: getVegItems
+		getVegItems: getVegItems,
+		addItem: addItem
 	};
 });
 
