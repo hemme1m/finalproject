@@ -11,29 +11,71 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
 
     $scope.allItems = $scope.dairyItems.concat($scope.fatItems).concat($scope.fruitItems).concat($scope.grainItems).concat($scope.proteinItems).concat($scope.vegItems);
 
-    $scope.foodForm = false;
+    var totals = {};
 
-    $scope.sendFood = function() {
-        $scope.foodForm = false;
-    };
-
-    $scope.cancel = function() {
-        console.log("cancel function");
+    function getTotals(foods){
+        var calTotal = 0;
+        var carbTotal = 0;
+        var proteinTotal = 0;
+        var fatTotal = 0;
+        foods.forEach(function (food){
+            calTotal += food.cal;
+            carbTotal += food.carbs;
+            proteinTotal += food.protein;
+            fatTotal += food.fat;
+        });
+        totals = {calTotal, carbTotal, proteinTotal, fatTotal};
+        return totals;
     };
 
     $scope.addItem = function(item){
-        // item = $scope.item;
         foodSelectionService.addItem(item);
-        console.log(item);
+
+        foodSelectionService.getAllItems().then(function(items) {
+            $scope.items = items;
+            getTotals(items);
+            $scope.calTotal = totals.calTotal;
+            $scope.carbTotal = totals.carbTotal;
+            $scope.proteinTotal = totals.proteinTotal;
+            $scope.fatTotal = totals.fatTotal;
+        });
     };
-});
 
-app.controller("totalController", function($scope, totalService) {
-    // $scope.formItem = {};
-
-    // Load the cart data on page load.
-    totalService.getAllItems().then(function(items) {
+    foodSelectionService.getAllItems().then(function(items) {
         $scope.items = items;
+        getTotals(items);
+        $scope.calTotal = totals.calTotal;
+        $scope.carbTotal = totals.carbTotal;
+        $scope.proteinTotal = totals.proteinTotal;
+        $scope.fatTotal = totals.fatTotal;
     });
 });
+
+// app.controller("totalController", function($scope, totalService) {
+//     totalService.getAllItems().then(function(items) {
+//         $scope.items = items;
+//         getCalTotal(items);
+//         $scope.calTotal = totals.calTotal;
+//         $scope.carbTotal = totals.carbTotal;
+//         $scope.proteinTotal = totals.proteinTotal;
+//         $scope.fatTotal = totals.fatTotal;
+//     });
+
+//     var totals = {};
+
+//     function getCalTotal(foods){
+//         var calTotal = 0;
+//         var carbTotal = 0;
+//         var proteinTotal = 0;
+//         var fatTotal = 0;
+//         foods.forEach(function (food){
+//             calTotal += food.cal;
+//             carbTotal += food.carbs;
+//             proteinTotal += food.protein;
+//             fatTotal += food.fat;
+//         });
+//         totals = {calTotal, carbTotal, proteinTotal, fatTotal};
+//         return totals;
+//     };
+// });
 

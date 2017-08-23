@@ -200,9 +200,15 @@ app.factory("foodSelectionService", function($http) {
 		return vegItems;
 	};
 
-	function addItem(item){
+	function addItem(item) {
 		return $http.post("/api/item", item);
 		console.log("service: item added");
+	};
+
+	function getAllItems() {
+		return $http.get("/api/total").then(function(response) {
+			return response.data;
+		});
 	};
 
 	return {
@@ -212,15 +218,7 @@ app.factory("foodSelectionService", function($http) {
 		getGrainItems: getGrainItems,
 		getProteinItems: getProteinItems,
 		getVegItems: getVegItems,
-		addItem: addItem
+		addItem: addItem,
+		getAllItems: getAllItems
 	};
 });
-
-app.service("totalService", function($http) {
-    this.getAllItems = function() {
-        return $http.get("/api/total").then(function(response) {
-            return response.data;
-        });
-    };
-});
-
