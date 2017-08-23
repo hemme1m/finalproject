@@ -211,6 +211,10 @@ app.factory("foodSelectionService", function($http) {
 		});
 	};
 
+	function deleteItems(){
+		return $http.delete("/api/total");
+	};
+
 	return {
 		getDairyItems: getDairyItems,
 		getFatItems: getFatItems,
@@ -219,6 +223,7 @@ app.factory("foodSelectionService", function($http) {
 		getProteinItems: getProteinItems,
 		getVegItems: getVegItems,
 		addItem: addItem,
-		getAllItems: getAllItems
+		getAllItems: getAllItems,
+		deleteItems: deleteItems
 	};
 });

@@ -37,6 +37,17 @@ app.post("/api/item", function(req, res){
 	});
 });
 
+app.delete("/api/total", function(req, res){
+	pool.query("DELETE FROM nutrientlog").then(function(result){
+		res.send("Deleted current log.");
+	}).catch(function(err){
+		console.log(err);
+		res.status(500);
+		res.send("Server Error");
+	});
+});
+
+
 var port = process.env.PORT || 5000;
 app.listen(port, function () {
   console.log('JSON Server is running on ' + port);

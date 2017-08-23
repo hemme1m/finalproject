@@ -42,6 +42,21 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
         });
     };
 
+    $scope.clearLog = function(){
+        foodSelectionService.deleteItems().then(function(){
+
+            foodSelectionService.getAllItems().then(function(items) {
+                $scope.items = items;
+                getTotals(items);
+                $scope.calTotal = totals.calTotal;
+                $scope.carbTotal = totals.carbTotal;
+                $scope.proteinTotal = totals.proteinTotal;
+                $scope.fatTotal = totals.fatTotal;
+                $scope.foodData = [$scope.carbTotal, $scope.proteinTotal, $scope.fatTotal];
+            });
+        });
+    };
+
     foodSelectionService.getAllItems().then(function(items) {
         $scope.items = items;
         getTotals(items);

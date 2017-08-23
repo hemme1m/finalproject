@@ -2,9 +2,9 @@
 	<div class="col-xs-12" id="totalsDisplay">
 		<ul>
 			<li>Calories: {{calTotal}}</li>
-			<li>Carbs: {{carbTotal}}g</li>
-			<li>Protein: {{proteinTotal}}g</li>
-			<li>Fat: {{fatTotal}}g</li>
+			<li>Carbs: {{carbTotal | number: 2}}g</li>
+			<li>Protein: {{proteinTotal | number: 2}}g</li>
+			<li>Fat: {{fatTotal | number: 2}}g</li>
 		</ul>
 	</div>
 </div>
