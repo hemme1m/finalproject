@@ -20,10 +20,16 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
     $scope.cancel = function() {
         console.log("cancel function");
     };
+
+    $scope.addItem = function(item){
+        // item = $scope.item;
+        foodSelectionService.addItem(item);
+        console.log(item);
+    };
 });
 
 app.controller("totalController", function($scope, totalService) {
-    $scope.formItem = {};
+    // $scope.formItem = {};
 
     // Load the cart data on page load.
     totalService.getAllItems().then(function(items) {

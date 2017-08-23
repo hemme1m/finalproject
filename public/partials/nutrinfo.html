@@ -8,6 +8,6 @@
     <p>Protein: {{item.protein}}g</p>
     <p>Fats: {{item.fat}}g</p>
     <hr>
-    <button class="btn btn-success" ng-click="ok()">Add Food</button>
-    <button class="btn btn-danger" ng-click="selected.value = null; cancel()">Cancel</button>
+    <button class="btn btn-success" ng-click="addItem(item); selected.value = null;">Add Food</button>
+    <button class="btn btn-danger" ng-click="selected.value = null; cancel();">Cancel</button>
 </div>
