@@ -25,7 +25,7 @@ app.factory("foodSelectionService", function($http) {
 	function getFatItems() {
 		var fatItems = [
 			{name: "reese's", servings: 1, servSize: "45g", group: "fats and sugar",
-			cal: 232, carbs: 25, protein: 4.6, fat: 14, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/reese.jpg"},
+			cal: 232, carbs: 25, protein: 4.6, fat: 14, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/reeses.jpg"},
 			{name: "nutella", servings: 1, servSize: "37g", group: "fats and sugar",
 			cal: 200, carbs: 23, protein: 2, fat: 12, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/nutella.jpg"},
 			{name: "butter", servings: 1, servSize: "1 tbs", group: "fats and sugar",
@@ -33,7 +33,7 @@ app.factory("foodSelectionService", function($http) {
 			{name: "olive oil", servings: 1, servSize: "13.5g", group: "fats and sugar",
 			cal: 119, carbs: 0, protein: 0, fat: 14, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/oliveOil.jpg"},
 			{name: "vanilla ice cream", servings: 1, servSize: "66g", group: "fats and sugar",
-			cal: 137, carbs: 16, protein: 2.3, fat: 7, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/iceCream.jpe"},
+			cal: 137, carbs: 16, protein: 2.3, fat: 7, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/iceCream.jpg"},
 			{name: "cookies", servings: 1, servSize: "16g", group: "fats and sugar",
 			cal: 78, carbs: 9, protein: 0.9, fat: 4.5, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/cookies.jpg"},
 			{name: "cake", servings: 1, servSize: "64g", group: "fats and sugar",
