@@ -158,13 +158,13 @@ main > div {
     border: 2px solid black;
 }
 
-.row {
+/*.row {
     padding: 0px 0px;
     margin: 0%;
     max-width: 100%;
     display: inline-block;
     border: 2px solid black;
-}
+}*/
 
 .rowHeading {
     text-align: left;
@@ -200,4 +200,9 @@ main > div {
     /* margin: 0px 0px 0px 0px; */
     margin-left: -30px;
     padding-right: 19px;
+}
+
+.rtimages {
+    width: 10%;
+    height: 10%;
 }

@@ -2,6 +2,8 @@ var app = angular.module("nutrientApp");
 
 app.controller("foodGrpController", function($scope, foodSelectionService) {
 
+    //$scope.items = [];
+
 	$scope.dairyItems = foodSelectionService.getDairyItems();
 	$scope.fatItems = foodSelectionService.getFatItems();
 	$scope.fruitItems = foodSelectionService.getFruitItems();
