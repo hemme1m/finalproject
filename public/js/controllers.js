@@ -2,7 +2,23 @@ var app = angular.module("nutrientApp");
 
 app.controller("foodGrpController", function($scope, foodSelectionService) {
 
-    //$scope.items = [];
+    foodSelectionService.getAllItems().then(function(items) {
+        $scope.items = items;
+        getTotals(items);
+        getServingTotals(items);
+        $scope.calTotal = totals.calTotal;
+        $scope.carbTotal = totals.carbTotal;
+        $scope.proteinTotal = totals.proteinTotal;
+        $scope.fatTotal = totals.fatTotal;
+        $scope.dairyServings = servingTotals.dairyServings;
+        $scope.fruitServings = servingTotals.fruitServings;
+        $scope.grainServings = servingTotals.grainServings;
+        $scope.proteinServings = servingTotals.proteinServings;
+        $scope.vegServings = servingTotals.vegServings;
+
+        $scope.foodLabels = ["Carbohydrates", "Protein", "Fat"];
+        $scope.foodData = [$scope.carbTotal, $scope.proteinTotal, $scope.fatTotal];
+    });
 
 	$scope.dairyItems = foodSelectionService.getDairyItems();
 	$scope.fatItems = foodSelectionService.getFatItems();
@@ -14,8 +30,76 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
     $scope.allItems = $scope.dairyItems.concat($scope.fatItems).concat($scope.fruitItems).concat($scope.grainItems).concat($scope.proteinItems).concat($scope.vegItems);
 
     var totals = {};
+    var randomItem = {};
+    $scope.randDairyItems = [];
+    $scope.randFruitItems = [];
+    $scope.randGrainItems = [];
+    $scope.randProteinItems = [];
+    $scope.randVegItems = [];
 
-    function getTotals(foods){
+    //functions to re-randomize suggested food arrays
+    $scope.randDairy = function() {
+        var randomItem = {};
+        $scope.randDairyItems = [];
+        while ($scope.randDairyItems.length < 5) {
+            randomItem = $scope.dairyItems[Math.floor(Math.random() * $scope.dairyItems.length)];
+            if (!$scope.randDairyItems.includes(randomItem)){
+                $scope.randDairyItems.push(randomItem);
+            };
+        };
+    };
+
+    $scope.randFruit = function() {
+        var randomItem = {};
+        $scope.randFruitItems = [];
+        while ($scope.randFruitItems.length < 5) {
+            randomItem = $scope.fruitItems[Math.floor(Math.random() * $scope.fruitItems.length)];
+            if (!$scope.randFruitItems.includes(randomItem)){
+                $scope.randFruitItems.push(randomItem);
+            };
+        };
+    };
+
+    $scope.randGrain = function() {
+        var randomItem = {};
+        $scope.randGrainItems = [];
+        while ($scope.randGrainItems.length < 5) {
+            randomItem = $scope.grainItems[Math.floor(Math.random() * $scope.grainItems.length)];
+            if (!$scope.randGrainItems.includes(randomItem)){
+                $scope.randGrainItems.push(randomItem);
+            };
+        };
+    };
+
+    $scope.randProtein = function() {
+        var randomItem = {};
+        $scope.randProteinItems = [];
+        while ($scope.randProteinItems.length < 5) {
+            randomItem = $scope.proteinItems[Math.floor(Math.random() * $scope.proteinItems.length)];
+            if (!$scope.randProteinItems.includes(randomItem)){
+                $scope.randProteinItems.push(randomItem);
+            };
+        };
+    };
+
+    $scope.randVeg = function() {
+        var randomItem = {};
+        $scope.randVegItems = [];
+        while ($scope.randVegItems.length < 5) {
+            randomItem = $scope.vegItems[Math.floor(Math.random() * $scope.vegItems.length)];
+            if (!$scope.randVegItems.includes(randomItem)){
+                $scope.randVegItems.push(randomItem);
+            };
+        };
+    };
+
+    $scope.randDairy();
+    $scope.randFruit();
+    $scope.randGrain();
+    $scope.randProtein();
+    $scope.randVeg();
+
+    function getTotals(foods) {
         var calTotal = 0;
         var carbTotal = 0;
         var proteinTotal = 0;
@@ -30,16 +114,46 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
         return totals;
     };
 
-    $scope.addItem = function(item){
+    function getServingTotals(foods) {
+        var dairyServings = 0;
+        var fruitServings = 0;
+        var grainServings = 0;
+        var proteinServings = 0;
+        var vegServings = 0;
+        foods.forEach(function(food) {
+            if (food.foodgroup === "dairy") {
+                dairyServings++;
+            } else if (food.foodgroup === "fruit") {
+                fruitServings++;
+            } else if (food.foodgroup === "grains") {
+                grainServings++;
+            } else if (food.foodgroup === "proteins") {
+                proteinServings;
+            } else if (food.foodgroup === "vegetable") {
+                vegServings++;
+            }
+
+            servingTotals = {dairyServings, fruitServings, grainServings, proteinServings, vegServings};
+            return servingTotals;
+        });
+    };
+
+    $scope.addItem = function(item) {
         foodSelectionService.addItem(item).then(function(){
 
             foodSelectionService.getAllItems().then(function(items) {
                 $scope.items = items;
                 getTotals(items);
+                getServingTotals(items);
                 $scope.calTotal = totals.calTotal;
                 $scope.carbTotal = totals.carbTotal;
                 $scope.proteinTotal = totals.proteinTotal;
                 $scope.fatTotal = totals.fatTotal;
+                $scope.dairyServings = servingTotals.dairyServings;
+                $scope.fruitServings = servingTotals.fruitServings;
+                $scope.grainServings = servingTotals.grainServings;
+                $scope.proteinServings = servingTotals.proteinServings;
+                $scope.vegServings = servingTotals.vegServings;
             });
         });
     };
@@ -49,156 +163,18 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
 
             foodSelectionService.getAllItems().then(function(items) {
                 $scope.items = items;
-                getTotals(items);
+                getServingTotals(items);
                 $scope.calTotal = totals.calTotal;
                 $scope.carbTotal = totals.carbTotal;
                 $scope.proteinTotal = totals.proteinTotal;
                 $scope.fatTotal = totals.fatTotal;
+                $scope.dairyServings = servingTotals.dairyServings;
+                $scope.fruitServings = servingTotals.fruitServings;
+                $scope.grainServings = servingTotals.grainServings;
+                $scope.proteinServings = servingTotals.proteinServings;
+                $scope.vegServings = servingTotals.vegServings;
                 $scope.foodData = [$scope.carbTotal, $scope.proteinTotal, $scope.fatTotal];
             });
         });
     };
-
-    foodSelectionService.getAllItems().then(function(items) {
-        $scope.items = items;
-        getTotals(items);
-        $scope.calTotal = totals.calTotal;
-        $scope.carbTotal = totals.carbTotal;
-        $scope.proteinTotal = totals.proteinTotal;
-        $scope.fatTotal = totals.fatTotal;
-
-        $scope.foodLabels = ["Carbohydrates", "Protein", "Fat"];
-        $scope.foodData = [$scope.carbTotal, $scope.proteinTotal, $scope.fatTotal];
-    });
-});
-
-app.controller("suggestionController", function($scope, foodSelectionService) {
-    var dairyItems = foodSelectionService.getDairyItems();
-
-    $scope.dairyRandItems = [];
-
-
-        var item = {};
-        var dairyItems = foodSelectionService.getDairyItems();
-
-				while ($scope.dairyRandItems.length < 5){
-					item = dairyItems[Math.floor(Math.random() * dairyItems.length)];
-					if (!$scope.dairyRandItems.includes(item)){
-						$scope.dairyRandItems.push(item);
-					}
-				}
-
-        $scope.randDairyItems = function () {
-            $scope.dairyRandItems = [];
-            var item = {};
-								while ($scope.dairyRandItems.length < 5){
-									item = dairyItems[Math.floor(Math.random() * dairyItems.length)];
-									if (!$scope.dairyRandItems.includes(item)){
-									 	$scope.dairyRandItems.push(item);
-									}
-								}
-					}
-
-    var vegItems = foodSelectionService.getVegItems();
-
-        $scope.vegRandItems = [];
-
-            var item = {};
-            var vegItems = foodSelectionService.getVegItems();
-
-						$scope.vegRandItems = [];
-						var item = {};
-								while ($scope.vegRandItems.length < 5){
-									item = vegItems[Math.floor(Math.random() * vegItems.length)];
-									if (!$scope.vegRandItems.includes(item)){
-										$scope.vegRandItems.push(item);
-									}
-								}
-
-						$scope.randVegItems = function () {
-		            $scope.vegRandItems = [];
-		            var item = {};
-										while ($scope.vegRandItems.length < 5){
-											item = vegItems[Math.floor(Math.random() * vegItems.length)];
-											if (!$scope.vegRandItems.includes(item)){
-											 	$scope.vegRandItems.push(item);
-											}
-										}
-							}
-
-    var Items = foodSelectionService.getFruitItems();
-
-        $scope.fruitRandItems = [];
-
-            var item = {};
-            var fruitItems = foodSelectionService.getFruitItems();
-
-						while ($scope.fruitRandItems.length < 5){
-							item = fruitItems[Math.floor(Math.random() * fruitItems.length)];
-							if (!$scope.fruitRandItems.includes(item)){
-								$scope.fruitRandItems.push(item);
-							}
-						}
-
-						$scope.randFruitItems = function () {
-		            $scope.fruitRandItems = [];
-		            var item = {};
-										while ($scope.fruitRandItems.length < 5){
-											item = fruitItems[Math.floor(Math.random() * fruitItems.length)];
-											if (!$scope.fruitRandItems.includes(item)){
-											 	$scope.fruitRandItems.push(item);
-											}
-										}
-							}
-
-     var Items = foodSelectionService.getGrainItems();
-
-        $scope.grainRandItems = [];
-
-            var item = {};
-            var grainItems = foodSelectionService.getGrainItems();
-
-						while ($scope.grainRandItems.length < 5){
-							item = grainItems[Math.floor(Math.random() * grainItems.length)];
-							if (!$scope.grainRandItems.includes(item)){
-								$scope.grainRandItems.push(item);
-							}
-						}
-
-						$scope.randGrainItems = function () {
-		            $scope.grainRandItems = [];
-		            var item = {};
-										while ($scope.grainRandItems.length < 5){
-											item = grainItems[Math.floor(Math.random() * grainItems.length)];
-											if (!$scope.grainRandItems.includes(item)){
-											 	$scope.grainRandItems.push(item);
-											}
-										}
-							}
-
-    var Items = foodSelectionService.getProteinItems();
-
-        $scope.proteinRandItems = [];
-
-            var item = {};
-            var proteinItems = foodSelectionService.getProteinItems();
-
-						while ($scope.proteinRandItems.length < 5){
-							item = proteinItems[Math.floor(Math.random() * proteinItems.length)];
-							if (!$scope.proteinRandItems.includes(item)){
-								$scope.proteinRandItems.push(item);
-							}
-						}
-
-						$scope.randProteinItems = function () {
-		            $scope.proteinRandItems = [];
-		            var item = {};
-										while ($scope.proteinRandItems.length < 5){
-											item = proteinItems[Math.floor(Math.random() * proteinItems.length)];
-											if (!$scope.proteinRandItems.includes(item)){
-											 	$scope.proteinRandItems.push(item);
-											}
-										}
-							}
-
 });

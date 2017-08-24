@@ -1,0 +1,10 @@
+<span ng-if="selected.value === $index">
+    <h5>Nutrition Facts</h5>
+    <span>Serving Size: {{item.servSize}}</span>
+    <span>Calories: {{item.cal}}</span>
+    <span>Carbs: {{item.carbs}}g</span>
+    <span>Protein: {{item.protein}}g</span>
+    <span>Fats: {{item.fat}}g</span><br>
+    <button class="btn btn-success foodbuttons" ng-click="addItem(item); selected.value = null;">Add Food</button>
+    <button class="btn btn-danger foodbuttons" ng-click="selected.value = null">Cancel</button>
+</span>
