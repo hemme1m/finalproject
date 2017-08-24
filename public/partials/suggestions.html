@@ -1,1 +1,122 @@
-Suggestions Page
+
+<h1>Random Menu Selections</h1>
+
+<div class="container">
+
+	<div>
+	    <div class="row" class="col-md-8 col-sm-6 xs-12" >
+	    	<h2 class="rowHeading">Dairy Items</h2>
+
+	    	<div class="servingsTotal" class="col-md-4 col-sm-6 xs-12" >
+	         	<p>Current Servings: </p>
+	         	<p>Goal Servings: </p>
+	        	<button class="btn" ng-click="randDairyItems();">Random Dairy</button>  
+	        </div>
+
+	    	<div class="sug">
+	    		<div class= "randRow" class="col-md-1 col-sm-6 xs-12 class="dairyRow" ng-repeat="item in dairyRandItems track by $index">
+
+	            <p class="suggestionInfo"><img class= "suggestImg" src="{{item.img}}"><br>{{item.name}}</p>
+	         	</div>
+	        </div>
+	    </div>
+
+	         
+
+	</div>
+
+
+<div>
+    <div class="row" class="col-md-8 col-sm-6 xs-12" >
+    	<h2 class="rowHeading">Vegetable Items</h2>
+
+    	 <div class="servingsTotal" class="col-md-4 col-sm-6 xs-12">
+         	<p>Current Servings: </p>
+         	<p>Goal Servings: </p>
+        	<button class="btn" ng-click="randVegItems();">Random Vegetable</button>  
+        </div> 
+
+    	<div class="sug">
+    		<div class= "randRow" class="col-md-1 col-sm-6 xs-12 class="dairyRow" ng-repeat="item in vegRandItems track by $index">
+
+            <p class="suggestionInfo"><img class= "suggestImg" src="{{item.img}}"><br>{{item.name}}</p>
+        	</div>
+		</div>
+
+    </div>
+
+   		       
+</div>
+
+
+<div>
+    <div class="row" class="col-md-8 col-sm-6 xs-12" >
+    	<h2 class="rowHeading">Fruit Items</h2>
+
+    	<div class="servingsTotal" class="col-md-4 col-sm-6 xs-12">
+         	<p>Current Servings: </p>
+         	<p>Goal Servings: </p>
+        	<button class="btn" ng-click="randFruitItems();">Random Fruit</button>  
+        </div>
+
+    	<div class="sug">
+    		<div class= "randRow" class="col-md-1 col-sm-6 xs-12 class="dairyRow" ng-repeat="item in fruitRandItems track by $index">
+
+            <p class="suggestionInfo"><img class= "suggestImg" src="{{item.img}}"><br>{{item.name}}</p>
+        	</div>
+		</div>
+
+    </div> 		         
+</div>
+
+<div>
+    <div class="row" class="col-md-8 col-sm-6 xs-12" >
+    	<h2 class="rowHeading">Grain Items</h2>
+
+    	<div class="servingsTotal" class="col-md-4 col-sm-6 xs-12">
+         	<p>Current Servings: </p>
+         	<p>Goal Servings: </p>
+        	<button class="btn" ng-click="randGrainItems();">Random Grains</button>  
+        </div>
+
+    	<div class="sug">
+    		<div class= "randRow" class="col-md-1 col-sm-6 xs-12 class="dairyRow" ng-repeat="item in grainRandItems track by $index">
+
+            <p class="suggestionInfo"><img class= "suggestImg" src="{{item.img}}"><br>{{item.name}}</p>
+        	</div>
+		</div>
+
+    </div> 		         
+</div>
+
+<div>
+    <div class="row" class="col-md-8 col-sm-6 xs-12" >
+    	<h2 class="rowHeading">Protein Items</h2>
+
+    	<div class="servingsTotal" class="col-md-4 col-sm-6 xs-12">
+         	<p>Current Servings: </p>
+         	<p>Goal Servings: </p>
+        	<button class="btn" ng-click="randProteinItems();">Random Proteins</button>  
+        </div>
+
+    	<div class="sug">
+    		<div class= "randRow" class="col-md-1 col-sm-6 xs-12 class="dairyRow" ng-repeat="item in proteinRandItems track by $index">
+
+            <p class="suggestionInfo"><img class= "suggestImg" src="{{item.img}}"><br>{{item.name}}</p>
+        	</div>
+		</div>
+
+    </div> 		         
+</div>
+
+
+</div>
+
+
+
+
+
+   <!--<p>{{totalRandItems}}</p> 
+   <<span class="suggestionInfo" > {{totalRandItems.name}} </span>
+   <img src= "{{totalRandItems.img}}" />
+   </div>-->

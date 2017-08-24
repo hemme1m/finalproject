@@ -142,7 +142,9 @@ main > div {
 
 .container  {
     max-width: 100%;
-}
+ 
+/*    display: inline-block;
+*/}
 
 .hideForm {
     display: none;
@@ -150,4 +152,52 @@ main > div {
 
 .showForm {
     display: block;
+}
+
+.dairyRow {
+    border: 2px solid black;
+}
+
+.row {
+    padding: 0px 0px;
+    margin: 0%;
+    max-width: 100%;
+    display: inline-block;
+    border: 2px solid black;
+}
+
+.rowHeading {
+    text-align: left;
+}
+
+.suggestImg {
+    width: 70%;
+    padding: 0%;
+    margin: 0%;
+}
+
+.randRow {
+    display: inline-block;
+    padding: 0px 0px;
+    margin: 0%;
+    max-width:20%;
+}
+
+.suggestionInfo {
+    width: 100%;
+}
+
+.sug{
+    display: inline-block;
+    width: 66%;
+    border-left: 1px solid black;
+}
+
+.servingsTotal {
+    text-align: left;
+    display: inline-block;
+    padding-left: 0px;
+    /* margin: 0px 0px 0px 0px; */
+    margin-left: -30px;
+    padding-right: 19px;
 }

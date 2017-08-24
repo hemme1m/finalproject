@@ -4,7 +4,7 @@ app.config(function($routeProvider) {
 
     $routeProvider.when("/suggestions", {
         templateUrl: "partials/suggestions.html",
-        // controller: "suggestionController"
+         controller: "suggestionController"
     });
 
     $routeProvider.when("/total", {
