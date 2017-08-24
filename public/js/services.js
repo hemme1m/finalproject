@@ -25,25 +25,25 @@ app.factory("foodSelectionService", function($http) {
 	function getFatItems() {
 		var fatItems = [
 			{name: "reese's", servings: 1, servSize: "45g", group: "fats and sugar",
-			cal: 232, carbs: 25, protein: 4.6, fat: 14, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/reese.jpeg"},
+			cal: 232, carbs: 25, protein: 4.6, fat: 14, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/reeses.jpg"},
 			{name: "nutella", servings: 1, servSize: "37g", group: "fats and sugar",
-			cal: 200, carbs: 23, protein: 2, fat: 12, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/nutella.jpeg"},
+			cal: 200, carbs: 23, protein: 2, fat: 12, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/nutella.jpg"},
 			{name: "butter", servings: 1, servSize: "1 tbs", group: "fats and sugar",
-			cal: 102, carbs: 0, protein: 0.1, fat: 12, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/butter.jpeg"},
+			cal: 102, carbs: 0, protein: 0.1, fat: 12, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/butter.jpg"},
 			{name: "olive oil", servings: 1, servSize: "13.5g", group: "fats and sugar",
-			cal: 119, carbs: 0, protein: 0, fat: 14, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/oliveoil.jpeg"},
+			cal: 119, carbs: 0, protein: 0, fat: 14, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/oliveOil.jpg"},
 			{name: "vanilla ice cream", servings: 1, servSize: "66g", group: "fats and sugar",
-			cal: 137, carbs: 16, protein: 2.3, fat: 7, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/icecream.jpeg"},
+			cal: 137, carbs: 16, protein: 2.3, fat: 7, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/iceCream.jpg"},
 			{name: "cookies", servings: 1, servSize: "16g", group: "fats and sugar",
-			cal: 78, carbs: 9, protein: 0.9, fat: 4.5, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/cookies.jpeg"},
+			cal: 78, carbs: 9, protein: 0.9, fat: 4.5, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/cookies.jpg"},
 			{name: "cake", servings: 1, servSize: "64g", group: "fats and sugar",
-			cal: 239, carbs: 38, protein: 2.2, fat: 9, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/cake.jpeg"},
+			cal: 239, carbs: 38, protein: 2.2, fat: 9, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/cake.jpg"},
 			{name: "sugar", servings: 1, servSize: "1 tsp", group: "fats and sugar",
-			cal: 16, carbs: 4.2, protein: 0, fat: 0, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/sugar.jpeg"},
+			cal: 16, carbs: 4.2, protein: 0, fat: 0, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/sugar.jpg"},
 			{name: "maple syrup", servings: 1, servSize: "1 tsp", group: "fats and sugar",
-			cal: 52, carbs: 13, protein: 0, fat: 0, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/maplesyrup.jpeg"},
+			cal: 52, carbs: 13, protein: 0, fat: 0, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/mapleSyrup.jpg"},
 			{name: "honey", servings: 1, servSize: "1 tbs", group: "fats and sugar",
-			cal: 64, carbs: 17, protein: 0.1, fat: 0, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/honey.jpeg"}
+			cal: 64, carbs: 17, protein: 0.1, fat: 0, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/honey.jpg"}
 		];
 		return fatItems;
 	};
