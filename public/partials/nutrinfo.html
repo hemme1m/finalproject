@@ -1,4 +1,4 @@
-<p class="foodIcon" ng-click="selected.value = $index"><img src="food.jpg"><br>{{item.name}}</p>
+<p class="foodIcon" ng-click="selected.value = $index"><img src="{{item.img}}"><br>{{item.name}}</p>
 <div ng-if="selected.value === $index">
     <h1>Nutrition Facts</h1>
     <hr>
