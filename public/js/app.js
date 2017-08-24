@@ -4,7 +4,7 @@ app.config(function($routeProvider) {
 
     $routeProvider.when("/suggestions", {
         templateUrl: "partials/suggestions.html",
-         controller: "suggestionController"
+         controller: "foodGrpController"
     });
 
     $routeProvider.when("/total", {
@@ -63,6 +63,13 @@ app.directive("nutritionInfo", function() {
 app.directive("runningTotal", function() {
     return {
         templateUrl: 'partials/runningtotal.html',
+        replace: false
+    }
+});
+
+app.directive("suggestedInfo", function () {
+    return {
+        templateUrl: 'partials/suggestedinfo.html',
         replace: false
     }
 });

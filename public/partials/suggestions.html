@@ -1,122 +1,90 @@
-
-<h1>Random Menu Selections</h1>
-
 <div class="container">
-
-	<div>
-	    <div class="row" class="col-md-8 col-sm-6 xs-12" >
-	    	<h2 class="rowHeading">Dairy Items</h2>
-
-	    	<div class="servingsTotal" class="col-md-4 col-sm-6 xs-12" >
-	         	<p>Current Servings: </p>
-	         	<p>Goal Servings: </p>
-	        	<button class="btn" ng-click="randomnumber();">Random Dairy</button>  
-	        </div>
-
-	    	<div class="sug">
-	    		<div class= "randRow" class="col-md-1 col-sm-6 xs-12 class="dairyRow" ng-repeat="item in dairyRandItems track by $index">
-
-	            <p class="suggestionInfo"><img class= "suggestImg" src="{{item.img}}"><br>{{item.name}}</p>
-	         	</div>
-	        </div>
-	    </div>
-
-	         
-
-	</div>
-
-
-<div>
-    <div class="row" class="col-md-8 col-sm-6 xs-12" >
-    	<h2 class="rowHeading">Vegetable Items</h2>
-
-    	 <div class="servingsTotal" class="col-md-4 col-sm-6 xs-12">
-         	<p>Current Servings: </p>
-         	<p>Goal Servings: </p>
-        	<button class="btn" ng-click="randVegItems();">Random Vegetable</button>  
-        </div> 
-
-    	<div class="sug">
-    		<div class= "randRow" class="col-md-1 col-sm-6 xs-12 class="dairyRow" ng-repeat="item in vegRandItems track by $index">
-
-            <p class="suggestionInfo"><img class= "suggestImg" src="{{item.img}}"><br>{{item.name}}</p>
-        	</div>
-		</div>
-
+    <h2>Currently Selected Foods</h2>
+    <running-total></running-total>
+    <h2>Random Food Suggestions</h2>
+    <div class="row"> 
+        <div class="col-xs-4 servingsTotal">
+            <h2 class="rowHeading">Dairy</h2>
+            <p>Current Servings: {{dairyServings}}</p>
+            <p>Goal Servings: 2-3</p>
+            <button class="btn" ng-click="randDairy()">Randomize Suggestions</button>
+        </div>
+        <div class="col-xs-8 suggestedRow">
+            <div class="randomFoodIcons" ng-repeat="item in randDairyItems track by $index">
+                <span ng-click="selected.value = $index">
+                <img src="{{item.img}}"><br>
+                <span>{{item.name}}</span>
+                </span>
+                <suggested-info></suggested-info>
+            </div>
+        </div>
     </div>
-
-   		       
-</div>
-
-
-<div>
-    <div class="row" class="col-md-8 col-sm-6 xs-12" >
-    	<h2 class="rowHeading">Fruit Items</h2>
-
-    	<div class="servingsTotal" class="col-md-4 col-sm-6 xs-12">
-         	<p>Current Servings: </p>
-         	<p>Goal Servings: </p>
-        	<button class="btn" ng-click="randFruitItems();">Random Fruit</button>  
+    <div class="row"> 
+        <div class="col-xs-4 servingsTotal">
+            <h2 class="rowHeading">Vegetables</h2>
+            <p>Current Servings: {{vegServings}}</p>
+            <p>Goal Servings: 3-5</p>
+            <button class="btn" ng-click="randVeg()">Randomize Suggestions</button>
         </div>
-
-    	<div class="sug">
-    		<div class= "randRow" class="col-md-1 col-sm-6 xs-12 class="dairyRow" ng-repeat="item in fruitRandItems track by $index">
-
-            <p class="suggestionInfo"><img class= "suggestImg" src="{{item.img}}"><br>{{item.name}}</p>
-        	</div>
-		</div>
-
-    </div> 		         
-</div>
-
-<div>
-    <div class="row" class="col-md-8 col-sm-6 xs-12" >
-    	<h2 class="rowHeading">Grain Items</h2>
-
-    	<div class="servingsTotal" class="col-md-4 col-sm-6 xs-12">
-         	<p>Current Servings: </p>
-         	<p>Goal Servings: </p>
-        	<button class="btn" ng-click="randGrainItems();">Random Grains</button>  
+        <div class="col-xs-8 suggestedRow">
+            <div class="randomFoodIcons" ng-repeat="item in randVegItems track by $index">
+                <span ng-click="selected.value = $index">
+                <img src="{{item.img}}"><br>
+                <span>{{item.name}}</span>
+                </span>
+                <suggested-info></suggested-info>
+            </div>
         </div>
-
-    	<div class="sug">
-    		<div class= "randRow" class="col-md-1 col-sm-6 xs-12 class="dairyRow" ng-repeat="item in grainRandItems track by $index">
-
-            <p class="suggestionInfo"><img class= "suggestImg" src="{{item.img}}"><br>{{item.name}}</p>
-        	</div>
-		</div>
-
-    </div> 		         
-</div>
-
-<div>
-    <div class="row" class="col-md-8 col-sm-6 xs-12" >
-    	<h2 class="rowHeading">Protein Items</h2>
-
-    	<div class="servingsTotal" class="col-md-4 col-sm-6 xs-12">
-         	<p>Current Servings: </p>
-         	<p>Goal Servings: </p>
-        	<button class="btn" ng-click="randProteinItems();">Random Proteins</button>  
+    </div>
+    <div class="row"> 
+        <div class="col-xs-4 servingsTotal">
+            <h2 class="rowHeading">Fruits</h2>
+            <p>Current Servings: {{fruitServings}}</p>
+            <p>Goal Servings: 2-4</p>
+            <button class="btn" ng-click="randFruit()">Randomize Suggestions</button>
         </div>
-
-    	<div class="sug">
-    		<div class= "randRow" class="col-md-1 col-sm-6 xs-12 class="dairyRow" ng-repeat="item in proteinRandItems track by $index">
-
-            <p class="suggestionInfo"><img class= "suggestImg" src="{{item.img}}"><br>{{item.name}}</p>
-        	</div>
-		</div>
-
-    </div> 		         
+        <div class="col-xs-8 suggestedRow">
+            <div class="randomFoodIcons" ng-repeat="item in randFruitItems track by $index">
+                <span ng-click="selected.value = $index">
+                <img src="{{item.img}}"><br>
+                <span>{{item.name}}</span>
+                </span>
+                <suggested-info></suggested-info>
+            </div>
+        </div>
+    </div>
+    <div class="row"> 
+        <div class="col-xs-4 servingsTotal">
+            <h2 class="rowHeading">Grains</h2>
+            <p>Current Servings: {{grainServings}}</p>
+            <p>Goal Servings: 6-11</p>
+            <button class="btn" ng-click="randGrain()">Randomize Suggestions</button>
+        </div>
+        <div class="col-xs-8 suggestedRow">
+            <div class="randomFoodIcons" ng-repeat="item in randGrainItems track by $index">
+                <span ng-click="selected.value = $index">
+                <img src="{{item.img}}"><br>
+                <span>{{item.name}}</span>
+                </span>
+                <suggested-info></suggested-info>
+            </div>
+        </div>
+    </div>
+    <div class="row"> 
+        <div class="col-xs-4 servingsTotal">
+            <h2 class="rowHeading">Protein</h2>
+            <p>Current Servings: {{proteinServings}}</p>
+            <p>Goal Servings: 2-3</p>
+            <button class="btn" ng-click="randProtein()">Randomize Suggestions</button>
+        </div>
+        <div class="col-xs-8 suggestedRow">
+            <div class="randomFoodIcons" ng-repeat="item in randProteinItems track by $index">
+                <span ng-click="selected.value = $index">
+                <img src="{{item.img}}"><br>
+                <span>{{item.name}}</span>
+                </span>
+                <suggested-info></suggested-info>
+            </div>
+        </div>
+    </div>
 </div>
-
-
-</div>
-
-
-
-
-
-   <!--<p>{{totalRandItems}}</p> 
-   <<span class="suggestionInfo" > {{totalRandItems.name}} </span>
-   <img src= "{{totalRandItems.img}}" />
-   </div>-->

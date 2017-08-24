@@ -1,13 +1,12 @@
-<p class="foodIcon" ng-click="selected.value = $index"><img src="{{item.img}}"><br>{{item.name}}</p>
+<p class="foodIcon" ng-click="selected.value = $index"><img src="{{item.img}}" data-toggle="tooltip" data-placement="top" title="{{item.name}}: Calories: {{item.cal}}, Carbs: {{item.carbs}}g, Protein: {{item.protein}}g, Fat: {{item.fat}}g"><br>{{item.name}}</p>
 <div ng-if="selected.value === $index">
-    <h1>Nutrition Facts</h1>
+    <h4>Nutrition Facts</h4>
+    <span>Serving Size: {{item.servSize}}</span><br>
+    <span>Calories: {{item.cal}}</span><br>
+    <span>Carbs: {{item.carbs}}g</span><br>
+    <span>Protein: {{item.protein}}g</span><br>
+    <span>Fats: {{item.fat}}g</span>
     <hr>
-    <p>Serving Size: {{item.servSize}}</p>
-    <p>Calories: {{item.cal}}</p>
-    <p>Carbs: {{item.carbs}}g</p>
-    <p>Protein: {{item.protein}}g</p>
-    <p>Fats: {{item.fat}}g</p>
-    <hr>
-    <button class="btn btn-success" ng-click="addItem(item); selected.value = null;">Add Food</button>
-    <button class="btn btn-danger" ng-click="selected.value = null; cancel();">Cancel</button>
+    <button class="btn btn-success foodbuttons" ng-click="addItem(item); selected.value = null;">Add Food</button>
+    <button class="btn btn-danger foodbuttons" ng-click="selected.value = null; cancel();">Cancel</button>
 </div>

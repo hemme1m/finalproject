@@ -30,10 +30,6 @@ img {
     cursor: pointer;
 }
 
-.row {
-    margin-top: 20px;
-}
-
 .container {
     max-width: 100%;
 }
@@ -183,12 +179,6 @@ main > div {
     text-align: left;
 }
 
-.suggestImg {
-    width: 70%;
-    padding: 0%;
-    margin: 0%;
-}
-
 .randRow {
     display: inline-block;
     padding: 0px 0px;
@@ -200,19 +190,10 @@ main > div {
     width: 100%;
 }
 
-.sug{
-    display: inline-block;
-    width: 66%;
-    border-left: 1px solid black;
-}
-
 .servingsTotal {
     text-align: left;
     display: inline-block;
     padding-left: 0px;
-    /* margin: 0px 0px 0px 0px; */
-    margin-left: -30px;
-    padding-right: 19px;
 }
 
 .rtimages {
@@ -254,3 +235,30 @@ li {
 img.img-responsive {
     box-sizing: border-box;
     margin-left: 15%;
+
+    margin: 5px;
+}
+
+.foodbuttons {
+    margin-bottom: 10px;
+}
+
+hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.suggestedRow {
+    display: flex;
+    margin-top: 35px;
+}
+
+.suggestedSpan {
+    margin-left: 10px;
+}
+
+.randomFoodIcons:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
