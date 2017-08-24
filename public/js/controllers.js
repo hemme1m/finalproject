@@ -67,11 +67,26 @@ app.controller("suggestionController", function($scope, foodSelectionService) {
             }
         }
 
+    var vegItems = foodSelectionService.getVegItems();
+
+        $scope.vegRandItems = [];
 
 
-/*
+            var item = {};
+            var vegItems = foodSelectionService.getVegItems();
+            
+
+            for (var i = 0; i < 5; i++) {
+            item = vegItems[Math.floor(Math.random() * vegItems.length)];    
+            $scope.vegRandItems.push(item);
+            console.log($scope.vegRandItems);
+            }
+
+
+
+
         $scope.randVegItems = function () {
-            $scope.totalRandItems = [];
+            $scope.vegRandItems = [];
 
             var item = {};
             var vegItems = foodSelectionService.getVegItems();
@@ -79,27 +94,109 @@ app.controller("suggestionController", function($scope, foodSelectionService) {
 
             for (var i = 0; i < 5; i++) {
             item = vegItems[Math.floor(Math.random() * vegItems.length)];    
-            $scope.totalRandItems.push(item);
-            console.log($scope.totalRandItems);
+            $scope.vegRandItems.push(item);
+            console.log($scope.vegRandItems);
         }
         }
 
-        $scope.randDairyItems = function () {
-            $scope.totalRandItems = [];
+
+    var Items = foodSelectionService.getFruitItems();
+
+        $scope.fruitRandItems = [];
+
 
             var item = {};
-            var dairyItems = foodSelectionService.getDairyItems();
+            var fruitItems = foodSelectionService.getFruitItems();
+            
+
+            for (var i = 0; i < 5; i++) {
+            item = fruitItems[Math.floor(Math.random() * fruitItems.length)];    
+            $scope.fruitRandItems.push(item);
+            console.log($scope.fruitRandItems);
+            }
+
+
+
+
+        $scope.randFruitItems = function () {
+            $scope.fruitRandItems = [];
+
+            var item = {};
+            var fruitItems = foodSelectionService.getFruitItems();
         
 
             for (var i = 0; i < 5; i++) {
-            item = dairyItems[Math.floor(Math.random() * dairyItems.length)];    
-            $scope.totalRandItems.push(item);
-            console.log($scope.totalRandItems);
+            item = fruitItems[Math.floor(Math.random() * fruitItems.length)];    
+            $scope.fruitRandItems.push(item);
+            console.log($scope.fruitRandItems);
+        }
+        }
+
+     var Items = foodSelectionService.getGrainItems();
+
+        $scope.grainRandItems = [];
+
+
+            var item = {};
+            var grainItems = foodSelectionService.getGrainItems();
+            
+
+            for (var i = 0; i < 5; i++) {
+            item = grainItems[Math.floor(Math.random() * grainItems.length)];    
+            $scope.grainRandItems.push(item);
+            console.log($scope.grainRandItems);
+            }
+
+
+
+
+        $scope.randGrainItems = function () {
+            $scope.grainRandItems = [];
+
+            var item = {};
+            var grainItems = foodSelectionService.getGrainItems();
+        
+
+            for (var i = 0; i < 5; i++) {
+            item = grainItems[Math.floor(Math.random() * grainItems.length)];    
+            $scope.grainRandItems.push(item);
+            console.log($scope.grainRandItems);
+        }
+        }
+
+    var Items = foodSelectionService.getProteinItems();
+
+        $scope.proteinRandItems = [];
+
+
+            var item = {};
+            var proteinItems = foodSelectionService.getProteinItems();
+            
+
+            for (var i = 0; i < 5; i++) {
+            item = proteinItems[Math.floor(Math.random() * proteinItems.length)];    
+            $scope.proteinRandItems.push(item);
+            console.log($scope.proteinRandItems);
+            }
+
+
+
+
+        $scope.randProteinItems = function () {
+            $scope.proteinRandItems = [];
+
+            var item = {};
+            var proteinItems = foodSelectionService.getProteinItems();
+        
+
+            for (var i = 0; i < 5; i++) {
+            item = proteinItems[Math.floor(Math.random() * proteinItems.length)];    
+            $scope.proteinRandItems.push(item);
+            console.log($scope.proteinRandItems);
         }
         }
 
         
- */   
 
 
 });
