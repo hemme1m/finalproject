@@ -1,8 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
+@font-face {
+  font-family: Alpha Garden;
+  font-style: normal;
+  font-weight: 400;
+  src: url("AlphaGarden.ttf");
+}
+
 img {
     width: 70%;
     border-radius: 50%;
+}
+
+.main {
+    background-color: #99ff99;
+    font-color: darkgreen;
 }
 
 .foodIcon {
@@ -44,8 +56,9 @@ html {
 }
 
 body {
-    background-color: #023E54;
-    background: linear-gradient(325deg, rgba(2,62,84, 0.75), rgba(16,170,192, 0.55));
+    
+    background-image: url("imgs/background-grocery.png");
+    
     margin: 25px auto;
     max-width: 700px;
 }
@@ -206,3 +219,38 @@ main > div {
     width: 10%;
     height: 10%;
 }
+
+.introparagraph {
+    text-align: left;
+    
+}
+
+.introparagraph::first-letter { 
+    font-size: 200%;
+    color: green;
+}
+
+.introheader {
+    color: darkgreen;
+}
+
+.landingbody {
+    color: darkgreen;
+}
+
+ul {
+    list-style: none;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 25%;
+    font-size: 150%;
+    color: green;
+}
+
+li {
+    font-weight: normal;
+}
+
+img.img-responsive {
+    box-sizing: border-box;
+    margin-left: 15%;
