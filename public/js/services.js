@@ -16,7 +16,7 @@ app.factory("foodSelectionService", function($http) {
 			cal: 100, carbs: 6, protein: 17, fat: 0.7, meal: ['breakfast', 'lunch'], img: "imgs/dairy/yogurt.jpeg"},
 			{name: "Cheddar Cheese", servings: 1, servSize: "1oz", group: "dairy",
 			cal: 114, carbs: 0.4, protein: 7, fat: 9, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/dairy/cheese.jpeg"},
-			{name: "Plain Cream Cheese", servings: 1, servSize: "1oz", group: "dairy",
+			{name: "Cream Cheese", servings: 1, servSize: "1oz", group: "dairy",
 			cal: 100, carbs: 1, protein: 2, fat: 10, meal: ['breakfast'], img: "imgs/dairy/creamcheese.jpeg"}
 		];
 		return dairyItems;
