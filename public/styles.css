@@ -12,16 +12,11 @@ img {
     border-radius: 50%;
 }
 
-.main {
-    background-color: #99ff99;
-    font-color: darkgreen;
-}
-
 .foodIcon {
     border: 1px solid red;
     border-radius: 10%;
     padding: 5px;
-    opacity: 0.3;
+    opacity: 0.5;
 }
 
 .foodIcon:hover{
@@ -54,18 +49,18 @@ html {
 body {
     
     background-image: url("imgs/background-grocery.png");
-    
     margin: 25px auto;
     max-width: 700px;
 }
 
 header {
     padding: 15px 5px;
-    background-color: whitesmoke;
+    background-color: #99ff99;
     border: 1px solid silver;
     border-radius: 5px;
     margin-bottom: 10px;
-    box-shadow: -4px 5px 6px #023E54;
+    box-shadow: -4px 5px 6px #333;
+    color: darkgreen;
 }
 
 #pageHeader {
@@ -101,8 +96,9 @@ main {
     padding: 15px 5px;
     border: 1px solid silver;
     border-radius: 5px;
-    background-color: whitesmoke;
-    box-shadow: -4px 5px 6px #023E54;
+    background-color: #99ff99;
+    color: darkgreen;
+    box-shadow: -4px 5px 6px #333;
 }
 
 main > div {
@@ -199,6 +195,11 @@ main > div {
 .rtimages {
     width: 10%;
     height: 10%;
+    margin: 5px;
+}
+
+#currentFoods {
+    margin-bottom: 10px;
 }
 
 .introparagraph {

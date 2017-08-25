@@ -98,7 +98,7 @@ app.factory("foodSelectionService", function($http) {
 			cal: 300, carbs: 26, protein: 15, fat: 16, meal: ['breakfast', 'lunch'], img: "imgs/grains/bagels.jpeg"},
 			{name: "Ramen Noodles", servings: 1, servSize: "1.5oz", group: "grains",
 			cal: 190, carbs: 26, protein: 5, fat: 7, meal: ['lunch', 'dinner'], img: "imgs/grains/ramen.jpeg"},
-			{name: "Corn Flakes (cereal)", servings: 1, servSize: "1 cup", group: "grains",
+			{name: "Corn Flakes", servings: 1, servSize: "1 cup", group: "grains",
 			cal: 100, carbs: 24, protein: 2, fat: 0, meal: ['breakfast'], img: "imgs/grains/cornflakes.jpeg"},
 			{name: "Crackers", servings: 1, servSize: "16g", group: "grains",
 			cal: 81, carbs: 10, protein: 1.1, fat: 4.1, meal: ['lunch'], img: "imgs/grains/crackers.jpeg"},

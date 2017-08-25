@@ -7,5 +7,5 @@
 			<li>Fat: {{fatTotal | number: 2}}g</li>
 		</ul>
 	</div>
-	<div class="col-xs-12"><span ng-repeat="item in items"><img class="rtimages" ng-src="{{item.image}}" data-toggle="tooltip" data-placement="top" title="{{item.name}}: Calories: {{item.cal}}, Carbs: {{item.carbs}}g, Protein: {{item.protein}}g, Fat: {{item.fat}}g"></span> </div>
+	<div class="col-xs-12" id="currentFoods"><span ng-repeat="item in items"><img class="rtimages" ng-src="{{item.image}}" data-toggle="tooltip" data-placement="top" title="{{item.name}}: Calories: {{item.cal}}, Carbs: {{item.carbs}}g, Protein: {{item.protein}}g, Fat: {{item.fat}}g"></span> </div>
 </div>
