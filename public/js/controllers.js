@@ -128,7 +128,7 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
             } else if (food.foodgroup === "grains") {
                 grainServings++;
             } else if (food.foodgroup === "proteins") {
-                proteinServings;
+                proteinServings++;
             } else if (food.foodgroup === "vegetable") {
                 vegServings++;
             }
