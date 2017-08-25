@@ -9,24 +9,7 @@
 
 img {
     width: 70%;
-    border-radius: 50%;
-}
-
-.foodIcon {
-    border: 1px solid red;
     border-radius: 10%;
-    padding: 5px;
-    opacity: 0.5;
-}
-
-.foodIcon:hover{
-    transform: scale(1.02);
-    opacity: 1;
-    cursor: pointer;
-}
-
-.container {
-    max-width: 100%;
 }
 
 html {
@@ -47,8 +30,10 @@ html {
 }
 
 body {
-    
     background-image: url("imgs/background-grocery.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     margin: 25px auto;
     max-width: 700px;
 }
@@ -147,17 +132,8 @@ main > div {
 
 .container  {
     max-width: 100%;
- 
-/*    display: inline-block;
-*/}
-
-.hideForm {
-    display: none;
 }
 
-.showForm {
-    display: block;
-}
 
 .dairyRow {
     border: 2px solid black;
@@ -236,17 +212,19 @@ li {
 img.img-responsive {
     box-sizing: border-box;
     margin-left: 15%;
-
     margin: 5px;
 }
 
 .foodbuttons {
-    margin-bottom: 10px;
+    margin-top: 5px;
+    width: 50%;
+    height: 15%;
+    display: inline;
 }
 
 hr {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 1px;
+    margin-bottom: 1px;
 }
 
 .suggestedRow {
@@ -263,3 +241,49 @@ hr {
     cursor: pointer;
 }
 
+.foodIcon {
+    position: relative;
+    margin-top: 10px;
+    border: 1px solid red;
+    border-radius: 10%;
+    padding: 5px;
+    opacity: 0.5;
+}
+
+.foodIcon:hover {
+    background-color: whitesmoke;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.foodIcon:hover .foodIcons {
+    z-index: 0;
+    opacity: 0.25;
+}
+
+.foodIcon:hover .selectedFoodInfo {
+    display: block;
+    z-index: 1000;
+    position: absolute;
+}
+
+.foodGrpDiv:hover {
+    margin-top: 10px;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.nutrList {
+    display: inline;
+    font-size: 1em;
+    list-style: none;
+    margin: 0;
+}
+
+.selectedFoodInfo {
+    position: fixed;
+    top: -5%;
+    left: 20%;
+    display: none;
+    text-align: center;
+}
