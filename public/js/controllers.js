@@ -2,33 +2,6 @@ var app = angular.module("nutrientApp");
 
 app.controller("foodGrpController", function($scope, foodSelectionService) {
 
-    foodSelectionService.getAllItems().then(function(items) {
-        $scope.items = items;
-        getTotals(items);
-        getServingTotals(items);
-        $scope.calTotal = totals.calTotal;
-        $scope.carbTotal = totals.carbTotal;
-        $scope.proteinTotal = totals.proteinTotal;
-        $scope.fatTotal = totals.fatTotal;
-        $scope.dairyServings = servingTotals.dairyServings;
-        $scope.fruitServings = servingTotals.fruitServings;
-        $scope.grainServings = servingTotals.grainServings;
-        $scope.proteinServings = servingTotals.proteinServings;
-        $scope.vegServings = servingTotals.vegServings;
-
-        $scope.foodLabels = ["Carbohydrates", "Protein", "Fat"];
-        $scope.foodData = [$scope.carbTotal, $scope.proteinTotal, $scope.fatTotal];
-    });
-
-	$scope.dairyItems = foodSelectionService.getDairyItems();
-	$scope.fatItems = foodSelectionService.getFatItems();
-	$scope.fruitItems = foodSelectionService.getFruitItems();
-	$scope.grainItems = foodSelectionService.getGrainItems();
-	$scope.proteinItems = foodSelectionService.getProteinItems();
-	$scope.vegItems = foodSelectionService.getVegItems();
-
-    $scope.allItems = $scope.dairyItems.concat($scope.fatItems).concat($scope.fruitItems).concat($scope.grainItems).concat($scope.proteinItems).concat($scope.vegItems);
-
     var totals = {};
     var servingTotals = {};
     var randomItem = {};
@@ -37,6 +10,21 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
     $scope.randGrainItems = [];
     $scope.randProteinItems = [];
     $scope.randVegItems = [];
+
+	$scope.dairyItems = foodSelectionService.getDairyItems();
+	$scope.fatItems = foodSelectionService.getFatItems();
+	$scope.fruitItems = foodSelectionService.getFruitItems();
+	$scope.grainItems = foodSelectionService.getGrainItems();
+	$scope.proteinItems = foodSelectionService.getProteinItems();
+	$scope.vegItems = foodSelectionService.getVegItems();
+    $scope.allItems = $scope.dairyItems.concat($scope.fatItems).concat($scope.fruitItems).concat($scope.grainItems).concat($scope.proteinItems).concat($scope.vegItems);
+
+    foodSelectionService.getAllItems().then(function(items) {
+        $scope.items = items;
+        getServingTotals(items);
+        getTotals(items);
+        recalculateItems();
+    });
 
     //functions to re-randomize suggested food arrays
     $scope.randDairy = function() {
@@ -139,22 +127,28 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
         });
     };
 
+    function recalculateItems() {
+        $scope.calTotal = totals.calTotal;
+        $scope.carbTotal = totals.carbTotal;
+        $scope.proteinTotal = totals.proteinTotal;
+        $scope.fatTotal = totals.fatTotal;
+        $scope.dairyServings = servingTotals.dairyServings;
+        $scope.fruitServings = servingTotals.fruitServings;
+        $scope.grainServings = servingTotals.grainServings;
+        $scope.proteinServings = servingTotals.proteinServings;
+        $scope.vegServings = servingTotals.vegServings;
+        $scope.foodLabels = ["Carbohydrates", "Protein", "Fat"];
+        $scope.foodData = [$scope.carbTotal, $scope.proteinTotal, $scope.fatTotal];
+    };
+
     $scope.addItem = function(item) {
         foodSelectionService.addItem(item).then(function(){
 
             foodSelectionService.getAllItems().then(function(items) {
                 $scope.items = items;
-                getTotals(items);
                 getServingTotals(items);
-                $scope.calTotal = totals.calTotal;
-                $scope.carbTotal = totals.carbTotal;
-                $scope.proteinTotal = totals.proteinTotal;
-                $scope.fatTotal = totals.fatTotal;
-                $scope.dairyServings = servingTotals.dairyServings;
-                $scope.fruitServings = servingTotals.fruitServings;
-                $scope.grainServings = servingTotals.grainServings;
-                $scope.proteinServings = servingTotals.proteinServings;
-                $scope.vegServings = servingTotals.vegServings;
+                getTotals(items);
+                recalculateItems();
             });
         });
     };
@@ -165,17 +159,34 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
             foodSelectionService.getAllItems().then(function(items) {
                 $scope.items = items;
                 getServingTotals(items);
-                $scope.calTotal = totals.calTotal;
-                $scope.carbTotal = totals.carbTotal;
-                $scope.proteinTotal = totals.proteinTotal;
-                $scope.fatTotal = totals.fatTotal;
-                $scope.dairyServings = servingTotals.dairyServings;
-                $scope.fruitServings = servingTotals.fruitServings;
-                $scope.grainServings = servingTotals.grainServings;
-                $scope.proteinServings = servingTotals.proteinServings;
-                $scope.vegServings = servingTotals.vegServings;
-                $scope.foodData = [$scope.carbTotal, $scope.proteinTotal, $scope.fatTotal];
+                getTotals(items);
+                recalculateItems();
             });
         });
     };
+
+    $scope.saveCurrentLog = function() {
+        foodSelectionService.saveCurrentLog($scope.logday);
+    };
+
+    $scope.loadSavedLog = function() {
+        foodSelectionService.loadSavedLog($scope.savedLogday).then(function(items) {
+            $scope.items = items;
+            getServingTotals(items);
+            getTotals(items);
+            recalculateItems();
+        });
+    };
+
+    $scope.newLog = function() {
+        foodSelectionService.newLog().then(function(items) {
+            $scope.items = items;
+            getServingTotals(items);
+            getTotals(items);
+            recalculateItems();
+        });
+    };
+
 });
+
+

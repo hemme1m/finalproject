@@ -16,7 +16,27 @@ var pool = require("./pg-connection-pool");
 //pool queries here
 
 app.get("/api/total", function(req, res) {
-	pool.query("SELECT * FROM nutrientlog").then(function(result) {
+	pool.query("SELECT * FROM nutrientlog WHERE logday IS NULL").then(function(result) {
+		res.send(result.rows);
+	}).catch(function(err) {
+		console.log(err);
+		res.status(500);
+		res.send("Server Error");
+	});
+});
+
+app.get("/api/total/new", function(req, res) {
+	pool.query("SELECT * FROM nutrientlog WHERE logday IS NULL").then(function(result) {
+		res.send(result.rows);
+	}).catch(function(err) {
+		console.log(err);
+		res.status(500);
+		res.send("Server Error");
+	});
+});
+
+app.get("/api/total/:day", function(req, res) {
+	pool.query("SELECT * FROM nutrientlog WHERE logday ='" + req.params.day + "'").then(function(result) {
 		res.send(result.rows);
 	}).catch(function(err) {
 		console.log(err);
@@ -38,8 +58,18 @@ app.post("/api/item", function(req, res){
 });
 
 app.delete("/api/total", function(req, res){
-	pool.query("DELETE FROM nutrientlog").then(function(result){
+	pool.query("DELETE FROM nutrientlog WHERE logday IS NULL").then(function(result){
 		res.send("Deleted current log.");
+	}).catch(function(err){
+		console.log(err);
+		res.status(500);
+		res.send("Server Error");
+	});
+});
+
+app.put("/api/total/save/:day", function(req, res) {
+	pool.query("UPDATE nutrientlog SET logday='" + req.params.day + "' WHERE logday IS NULL").then(function(result) {
+		res.send("Updated logged day");
 	}).catch(function(err){
 		console.log(err);
 		res.status(500);

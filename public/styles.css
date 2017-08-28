@@ -308,3 +308,12 @@ h4{
   border-bottom: 1px green solid;
   width: 10%;
 }
+
+.logToggle {
+    display: inline-block;
+}
+
+.logToggle select {
+    width: 100%;
+    margin-bottom: 5px;
+}
