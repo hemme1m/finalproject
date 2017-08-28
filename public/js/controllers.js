@@ -30,6 +30,7 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
     $scope.allItems = $scope.dairyItems.concat($scope.fatItems).concat($scope.fruitItems).concat($scope.grainItems).concat($scope.proteinItems).concat($scope.vegItems);
 
     var totals = {};
+    var servingTotals = {};
     var randomItem = {};
     $scope.randDairyItems = [];
     $scope.randFruitItems = [];
