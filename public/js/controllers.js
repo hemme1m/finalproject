@@ -160,6 +160,17 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
         });
     };
 
+    $scope.deleteItem = function (item) {
+        foodSelectionService.deleteItem(item.id).then(function() {
+            foodSelectionService.getAllItems().then(function(items) {
+                $scope.items = items;
+                getServingTotals(items);
+                getTotals(items);
+                recalculateItems();
+            });
+        });
+    };
+
     $scope.clearLog = function(){
         foodSelectionService.deleteItems().then(function(){
 

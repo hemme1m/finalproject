@@ -201,32 +201,36 @@ app.factory("foodSelectionService", function($http) {
 	};
 
 	function addItem(item) {
-		return $http.post("/api/item", item);
+		return $http.post("/api/items", item);
 		console.log("service: item added");
 	};
 
 	function getAllItems() {
-		return $http.get("/api/total").then(function(response) {
+		return $http.get("/api/items").then(function(response) {
 			return response.data;
 		});
 	};
 
 	function deleteItems() {
-		return $http.delete("/api/total");
+		return $http.delete("/api/items");
+	};
+	
+	function deleteItem(itemId) {
+		return $http.delete("/api/items/" + itemId);
 	};
 
 	function saveCurrentLog(logday) {
-		return $http.put("/api/total/save/" + logday);
+		return $http.put("/api/items/save/" + logday);
 	};
 
 	function loadSavedLog(logday) {
-		return $http.get("/api/total/" + logday).then(function(response) {
+		return $http.get("/api/items/" + logday).then(function(response) {
 			return response.data;
 		});
 	};
 
 	function newLog() {
-		return $http.get("/api/total/new").then(function(response) {
+		return $http.get("/api/items/new").then(function(response) {
 			return response.data;
 		});
 	};
@@ -243,6 +247,7 @@ app.factory("foodSelectionService", function($http) {
 		deleteItems: deleteItems,
 		saveCurrentLog: saveCurrentLog,
 		loadSavedLog: loadSavedLog,
-		newLog: newLog
+		newLog: newLog,
+		deleteItem: deleteItem
 	};
 });
