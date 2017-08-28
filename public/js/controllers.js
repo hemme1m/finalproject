@@ -11,6 +11,8 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
     $scope.randProteinItems = [];
     $scope.randVegItems = [];
 
+    $scope.dairyBar = 0;
+
 	$scope.dairyItems = foodSelectionService.getDairyItems();
 	$scope.fatItems = foodSelectionService.getFatItems();
 	$scope.fruitItems = foodSelectionService.getFruitItems();
@@ -137,6 +139,11 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
         $scope.grainServings = servingTotals.grainServings;
         $scope.proteinServings = servingTotals.proteinServings;
         $scope.vegServings = servingTotals.vegServings;
+        $scope.dairyBar = ($scope.dairyServings / 3) * 100;
+        $scope.grainBar = ($scope.grainServings / 6) * 100;
+        $scope.fruitBar = ($scope.fruitServings / 2) * 100;
+        $scope.vegBar = ($scope.vegServings / 3) * 100;
+        $scope.proteinBar = ($scope.proteinServings / 2) * 100;
         $scope.foodLabels = ["Carbohydrates", "Protein", "Fat"];
         $scope.foodData = [$scope.carbTotal, $scope.proteinTotal, $scope.fatTotal];
     };

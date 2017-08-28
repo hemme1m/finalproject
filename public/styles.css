@@ -227,6 +227,10 @@ hr {
     margin-bottom: 1px;
 }
 
+.progress{
+    width:176px;
+}
+
 .suggestedRow {
     display: flex;
     margin-top: 35px;

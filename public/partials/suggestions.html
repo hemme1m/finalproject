@@ -7,6 +7,10 @@
             <h2 class="rowHeading">Dairy</h2>
             <p>Current Servings: {{dairyServings}}</p>
             <p>Goal Servings: 2-3</p>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:{{dairyBar}}%">
+                </div>
+            </div>
             <button class="btn" ng-click="randDairy()">Randomize Suggestions</button>
         </div>
         <div class="col-xs-8 suggestedRow">
@@ -24,6 +28,10 @@
             <h2 class="rowHeading">Vegetables</h2>
             <p>Current Servings: {{vegServings}}</p>
             <p>Goal Servings: 3-5</p>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:{{vegBar}}%">
+                </div>
+            </div>
             <button class="btn" ng-click="randVeg()">Randomize Suggestions</button>
         </div>
         <div class="col-xs-8 suggestedRow">
@@ -41,6 +49,10 @@
             <h2 class="rowHeading">Fruits</h2>
             <p>Current Servings: {{fruitServings}}</p>
             <p>Goal Servings: 2-4</p>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:{{fruitBar}}%">
+                </div>
+            </div>
             <button class="btn" ng-click="randFruit()">Randomize Suggestions</button>
         </div>
         <div class="col-xs-8 suggestedRow">
@@ -58,6 +70,10 @@
             <h2 class="rowHeading">Grains</h2>
             <p>Current Servings: {{grainServings}}</p>
             <p>Goal Servings: 6-11</p>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:{{grainBar}}%">
+                </div>
+            </div>
             <button class="btn" ng-click="randGrain()">Randomize Suggestions</button>
         </div>
         <div class="col-xs-8 suggestedRow">
@@ -75,6 +91,10 @@
             <h2 class="rowHeading">Protein</h2>
             <p>Current Servings: {{proteinServings}}</p>
             <p>Goal Servings: 2-3</p>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:{{proteinBar}}%">
+                </div>
+            </div>
             <button class="btn" ng-click="randProtein()">Randomize Suggestions</button>
         </div>
         <div class="col-xs-8 suggestedRow">
