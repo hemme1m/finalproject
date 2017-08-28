@@ -180,10 +180,10 @@ main > div {
 
 .introparagraph {
     text-align: left;
-    
+
 }
 
-.introparagraph::first-letter { 
+.introparagraph::first-letter {
     font-size: 200%;
     color: green;
 }
@@ -286,4 +286,25 @@ hr {
     left: 20%;
     display: none;
     text-align: center;
+}
+#legend-carb{
+  background-color: #97BBCD;
+}
+#legend-fat{
+  background-color: #F7464A;
+}
+#legend-protein{
+  background-color: #DCDCDC;
+}
+.legend-item {
+  width: 20%;
+  text-align: left;
+  padding-left: 6px;
+  font-style: oblique;
+  letter-spacing: 0.5px;
+}
+h4{
+  text-align: left;
+  border-bottom: 1px green solid;
+  width: 10%;
 }

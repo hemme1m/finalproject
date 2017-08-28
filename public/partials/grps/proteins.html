@@ -1,8 +1,9 @@
 <!-- All the Proteins -->
 <div class="container">
+	Search: <input ng-model="proteins" placeholder="food name" />
 	<running-total></running-total>
     <div class="row">
-        <div class="col-sm-4 col-xs-6" ng-repeat="item in proteinItems">
+			<div class="col-md-3 col-xs-6" ng-repeat="item in proteinItems | filter:proteins">
             <nutrition-info></nutrition-info>
         </div>
     </div>

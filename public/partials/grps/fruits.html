@@ -1,8 +1,9 @@
 <!-- All the Fruits -->
 <div class="container">
+	Search: <input ng-model="fruit" placeholder="food name" />
 	<running-total></running-total>
     <div class="row">
-        <div class="col-sm-4 col-xs-6" ng-repeat="item in fruitItems">
+			<div class="col-md-3 col-xs-6" ng-repeat="item in fruitItems | filter: fruit">
             <nutrition-info></nutrition-info>
         </div>
     </div>

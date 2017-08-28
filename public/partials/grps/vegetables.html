@@ -1,8 +1,9 @@
 <!--Veggies and Beans-->
 <div class="container">
+	Search: <input ng-model="veggies" placeholder="food name" />
 	<running-total></running-total>
     <div class="row">
-        <div class="col-sm-4 col-xs-6" ng-repeat="item in vegItems">
+			<div class="col-md-3 col-xs-6" ng-repeat="item in vegItems | filter:veggies">
             <nutrition-info></nutrition-info>
         </div>
     </div>

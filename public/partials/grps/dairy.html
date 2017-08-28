@@ -1,8 +1,9 @@
 <!--Dairy Things -->
 <div class="container">
+	Search: <input ng-model="dairy" placeholder="food name" />
 	<running-total></running-total>
     <div class="row">
-        <div class="col-sm-4 col-xs-6" ng-repeat="item in dairyItems">
+			<div class="col-md-3 col-xs-6" ng-repeat="item in dairyItems | filter:dairy">
             <nutrition-info></nutrition-info>
         </div>
     </div>

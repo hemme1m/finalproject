@@ -1,8 +1,9 @@
 <!-- Fats and Sweets -->
 <div class="container">
+	Search: <input ng-model="fats" placeholder="food name" />
 	<running-total></running-total>
     <div class="row">
-        <div class="col-sm-4 col-xs-6" ng-repeat="item in fatItems">
+			<div class="col-md-3 col-xs-6" ng-repeat="item in fatItems | filter:fats">
             <nutrition-info></nutrition-info>
         </div>
     </div>
