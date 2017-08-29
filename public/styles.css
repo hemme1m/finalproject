@@ -372,3 +372,13 @@ hr {
 #foodGrpServingList {
     font-size: 1.2em;
 }
+
+.search {
+  text-align: right;
+  padding-bottom: 5px;
+}
+
+input {
+  margin-left: 5px;
+  word-spacing: -9px;
+}
