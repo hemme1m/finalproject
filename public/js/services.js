@@ -108,7 +108,7 @@ app.factory("foodSelectionService", function($http) {
 			cal: 206, carbs: 45, protein: 4.3, fat: 0.4, meal: ['lunch', 'dinner'], img: "imgs/grains/whiterice.jpeg"},
 			{name: "Brown Rice", servings: 1, servSize: "1 cup", group: "grains",
 			cal: 216, carbs: 45, protein: 5, fat: 1.8, meal: ['lunch', 'dinner'], img: "imgs/grains/brownrice.jpeg"},
-			{name: "Waffles (frozen)", servings: 1, servSize: "2 waffles", group: "grains",
+			{name: "Waffles", servings: 1, servSize: "2 waffles", group: "grains",
 			cal: 180, carbs: 27, protein: 4, fat: 6, meal: ['breakfast'], img: "imgs/grains/waffles.jpeg"},
 			{name: "Pancakes", servings: 1, servSize: "2 pancakes", group: "grains",
 			cal: 160, carbs: 22, protein: 4.8, fat: 7.4, meal: ['breakfast'], img: "imgs/grains/pancakes.jpeg"},

@@ -32,7 +32,7 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
     $scope.randDairy = function() {
         var randomItem = {};
         $scope.randDairyItems = [];
-        while ($scope.randDairyItems.length < 5) {
+        while ($scope.randDairyItems.length < 4) {
             randomItem = $scope.dairyItems[Math.floor(Math.random() * $scope.dairyItems.length)];
             if (!$scope.randDairyItems.includes(randomItem)){
                 $scope.randDairyItems.push(randomItem);
@@ -43,7 +43,7 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
     $scope.randFruit = function() {
         var randomItem = {};
         $scope.randFruitItems = [];
-        while ($scope.randFruitItems.length < 5) {
+        while ($scope.randFruitItems.length < 4) {
             randomItem = $scope.fruitItems[Math.floor(Math.random() * $scope.fruitItems.length)];
             if (!$scope.randFruitItems.includes(randomItem)){
                 $scope.randFruitItems.push(randomItem);
@@ -54,7 +54,7 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
     $scope.randGrain = function() {
         var randomItem = {};
         $scope.randGrainItems = [];
-        while ($scope.randGrainItems.length < 5) {
+        while ($scope.randGrainItems.length < 4) {
             randomItem = $scope.grainItems[Math.floor(Math.random() * $scope.grainItems.length)];
             if (!$scope.randGrainItems.includes(randomItem)){
                 $scope.randGrainItems.push(randomItem);
@@ -65,7 +65,7 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
     $scope.randProtein = function() {
         var randomItem = {};
         $scope.randProteinItems = [];
-        while ($scope.randProteinItems.length < 5) {
+        while ($scope.randProteinItems.length < 4) {
             randomItem = $scope.proteinItems[Math.floor(Math.random() * $scope.proteinItems.length)];
             if (!$scope.randProteinItems.includes(randomItem)){
                 $scope.randProteinItems.push(randomItem);
@@ -76,7 +76,7 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
     $scope.randVeg = function() {
         var randomItem = {};
         $scope.randVegItems = [];
-        while ($scope.randVegItems.length < 5) {
+        while ($scope.randVegItems.length < 4) {
             randomItem = $scope.vegItems[Math.floor(Math.random() * $scope.vegItems.length)];
             if (!$scope.randVegItems.includes(randomItem)){
                 $scope.randVegItems.push(randomItem);

@@ -1,4 +1,4 @@
-<div ng-if="selected.value === $index">
+<!-- <div ng-if="selected.value === $index">
     <ul class="nutrList">
 	    <li><strong>Serving</strong>: {{item.servSize}}</li>
 	    <li><strong>Calories</strong>: {{item.cal}}</li>
@@ -10,4 +10,18 @@
     	<button class="btn btn-success" ng-click="addItem(item); selected.value = null;">+</button>
     	<button class="btn btn-danger randFoodButtons" ng-click="selected.value = null">-</button>
     </span>
+</div> -->
+<div class="foodIcon" ng-mouseenter="selected.value = $index" ng-click="selected.value = $index" ng-mouseleave="selected.value = null">
+    <div class="foodIcons"><img ng-src="{{item.img}}" data-toggle="tooltip" data-placement="top" title="{{item.name}}: Calories: {{item.cal}}, Carbs: {{item.carbs}}g, Protein: {{item.protein}}g, Fat: {{item.fat}}g"><br><span>{{item.name}}</span></div>
+    
+    <div ng-if="selected.value === $index" class="selectedFoodInfo" ng-mouseleave="selected.value = null">
+        <ul class="nutrListSug">
+            <li><strong>Serving Size</strong>: {{item.servSize}}</li>
+            <li><strong>Calories</strong>: {{item.cal}}</li>
+            <li><strong>Carbs</strong>: {{item.carbs}}g</li>
+            <li><strong>Protein</strong>: {{item.protein}}g</li>
+            <li><strong>Fats</strong>: {{item.fat}}g</li>
+        </ul>
+        <button ng-if="selected.value === $index" class="btn btn-success foodbuttons" ng-click="addItem(item); selected.value = null">+</button>
+    </div>
 </div>

@@ -1,109 +1,128 @@
 <div class="container">
     <h2>Currently Selected Foods</h2>
     <running-total></running-total>
-    <h2>Random Food Suggestions</h2>
     <div class="row"> 
-        <div class="col-xs-4 servingsTotal">
-            <h2 class="rowHeading">Dairy</h2>
-            <p>Current Servings: {{dairyServings}}</p>
-            <p>Goal Servings: 2-3</p>
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:{{dairyBar}}%">
+        <div class="col-xs-12 servingsTotal">
+            <div class="row">
+                <div class="col-xs-4 rowHeading">
+                    <h2>Dairy</h2>
+                    <span>Current Servings: {{dairyServings}}</span><br>
+                    <span>Goal Servings: 2-3</span><br>
+                    <button class="btn randBtn" ng-click="randDairy()">Randomize Suggestions</button>
+                </div>
+                <div class="col-xs-8 progressHeading">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:{{dairyBar}}%">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button class="btn randBtn" ng-click="randDairy()">Randomize Suggestions</button>
         </div>
-        <div class="col-xs-8 suggestedRow">
-            <div class="randomFoodIcons" ng-repeat="item in randDairyItems track by $index">
-                <div ng-click="selected.value = $index">
-                    <img ng-src="{{item.img}}">
-                    <p>{{item.name}}</p>
+        <div class="col-xs-12 suggestedRow">
+            <div class="row">
+                <div class="randomFoodIcons col-sm-3 col-xs-6" ng-repeat="item in randDairyItems track by $index">
+                    <suggested-info></suggested-info>
                 </div>
-                <suggested-info></suggested-info>
             </div>
         </div>
     </div>
     <div class="row"> 
-        <div class="col-xs-4 servingsTotal">
-            <h2 class="rowHeading">Vegetables</h2>
-            <p>Current Servings: {{vegServings}}</p>
-            <p>Goal Servings: 3-5</p>
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:{{vegBar}}%">
+        <div class="col-xs-12 servingsTotal">
+            <div class="row">
+                <div class="col-xs-4 rowHeading">
+                    <h2>Vegetables</h2>
+                    <span>Current Servings: {{vegServings}}</span><br>
+                    <span>Goal Servings: 2-3</span><br>
+                    <button class="btn randBtn" ng-click="randVeg()">Randomize Suggestions</button>
+                </div>
+                <div class="col-xs-8 progressHeading">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:{{vegBar}}%">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button class="btn randBtn" ng-click="randVeg()">Randomize Suggestions</button>
         </div>
-        <div class="col-xs-8 suggestedRow">
-            <div class="randomFoodIcons" ng-repeat="item in randVegItems track by $index">
-                <span ng-click="selected.value = $index">
-                <img ng-src="{{item.img}}">
-                <p>{{item.name}}</p>
-                </span>
-                <suggested-info></suggested-info>
+        <div class="col-xs-12 suggestedRow">
+            <div class="row">
+                <div class="randomFoodIcons col-sm-3 col-xs-6" ng-repeat="item in randVegItems track by $index">
+                    <suggested-info></suggested-info>
+                </div>
             </div>
         </div>
     </div>
     <div class="row"> 
-        <div class="col-xs-4 servingsTotal">
-            <h2 class="rowHeading">Fruits</h2>
-            <p>Current Servings: {{fruitServings}}</p>
-            <p>Goal Servings: 2-4</p>
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:{{fruitBar}}%">
+        <div class="col-xs-12 servingsTotal">
+            <div class="row">
+                <div class="col-xs-4 rowHeading">
+                    <h2>Fruit</h2>
+                    <span>Current Servings: {{fruitServings}}</span><br>
+                    <span>Goal Servings: 2-3</span><br>
+                    <button class="btn randBtn" ng-click="randFruit()">Randomize Suggestions</button>
+                </div>
+                <div class="col-xs-8 progressHeading">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:{{fruitBar}}%">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button class="btn randBtn" ng-click="randFruit()">Randomize Suggestions</button>
         </div>
-        <div class="col-xs-8 suggestedRow">
-            <div class="randomFoodIcons" ng-repeat="item in randFruitItems track by $index">
-                <span ng-click="selected.value = $index">
-                <img ng-src="{{item.img}}">
-                <p>{{item.name}}</p>
-                </span>
-                <suggested-info></suggested-info>
+        <div class="col-xs-12 suggestedRow">
+            <div class="row">
+                <div class="randomFoodIcons col-sm-3 col-xs-6" ng-repeat="item in randFruitItems track by $index">
+                    <suggested-info></suggested-info>
+                </div>
             </div>
         </div>
     </div>
     <div class="row"> 
-        <div class="col-xs-4 servingsTotal">
-            <h2 class="rowHeading">Grains</h2>
-            <p>Current Servings: {{grainServings}}</p>
-            <p>Goal Servings: 6-11</p>
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:{{grainBar}}%">
+        <div class="col-xs-12 servingsTotal">
+            <div class="row">
+                <div class="col-xs-4 rowHeading">
+                    <h2>Grains</h2>
+                    <span>Current Servings: {{grainServings}}</span><br>
+                    <span>Goal Servings: 2-3</span><br>
+                    <button class="btn randBtn" ng-click="randGrain()">Randomize Suggestions</button>
+                </div>
+                <div class="col-xs-8 progressHeading">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:{{grainBar}}%">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button class="btn randBtn" ng-click="randGrain()">Randomize Suggestions</button>
         </div>
-        <div class="col-xs-8 suggestedRow">
-            <div class="randomFoodIcons" ng-repeat="item in randGrainItems track by $index">
-                <span ng-click="selected.value = $index">
-                <img ng-src="{{item.img}}">
-                <p>{{item.name}}</p>
-                </span>
-                <suggested-info></suggested-info>
+        <div class="col-xs-12 suggestedRow">
+            <div class="row">
+                <div class="randomFoodIcons col-sm-3 col-xs-6" ng-repeat="item in randGrainItems track by $index">
+                    <suggested-info></suggested-info>
+                </div>
             </div>
         </div>
     </div>
     <div class="row"> 
-        <div class="col-xs-4 servingsTotal">
-            <h2 class="rowHeading">Protein</h2>
-            <p>Current Servings: {{proteinServings}}</p>
-            <p>Goal Servings: 2-3</p>
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:{{proteinBar}}%">
+        <div class="col-xs-12 servingsTotal">
+            <div class="row">
+                <div class="col-xs-4 rowHeading">
+                    <h2>Proteins</h2>
+                    <span>Current Servings: {{proteinServings}}</span><br>
+                    <span>Goal Servings: 2-3</span><br>
+                    <button class="btn randBtn" ng-click="randProtein()">Randomize Suggestions</button>
+                </div>
+                <div class="col-xs-8 progressHeading">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:{{proteinBar}}%">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button class="btn randBtn" ng-click="randProtein()">Randomize Suggestions</button>
         </div>
-        <div class="col-xs-8 suggestedRow">
-            <div class="randomFoodIcons" ng-repeat="item in randProteinItems track by $index">
-                <span ng-click="selected.value = $index">
-                <img ng-src="{{item.img}}">
-                <p>{{item.name}}</p>
-                </span>
-                <suggested-info></suggested-info>
+        <div class="col-xs-12 suggestedRow">
+            <div class="row">
+                <div class="randomFoodIcons col-sm-3 col-xs-6" ng-repeat="item in randProteinItems track by $index">
+                    <suggested-info></suggested-info>
+                </div>
             </div>
         </div>
     </div>
