@@ -135,6 +135,9 @@ main > div {
     max-width: 100%;
 }
 
+table {
+    font-size: 1.0em;
+}
 
 .dairyRow {
     border: 2px solid black;
