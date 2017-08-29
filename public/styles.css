@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
-
-@font-face {
+/*@font-face {
   font-family: Alpha Garden;
   font-style: normal;
   font-weight: 400;
   src: url("AlphaGarden.ttf");
 }
-
+*/
 img {
     width: 70%;
     border-radius: 10%;
@@ -15,7 +13,6 @@ img {
 html {
     min-height: 600px;
     min-width: 480px;
-    font-family: 'Raleway', sans-serif;
     /*more info on how scrollbar trick works:
     https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll;*/
     overflow: scroll;
@@ -30,6 +27,7 @@ html {
 }
 
 body {
+    font-family: 'Fjalla One', sans-serif;
     background-image: url("imgs/background-grocery.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -40,12 +38,12 @@ body {
 
 header {
     padding: 15px 5px;
-    background-color: #99ff99;
+    background-color: #FCFFF5;
     border: 1px solid silver;
     border-radius: 5px;
     margin-bottom: 10px;
     box-shadow: -4px 5px 6px #333;
-    color: darkgreen;
+    color: #023E54;
 }
 
 #pageHeader {
@@ -56,6 +54,7 @@ header {
 nav a {
     color: #023E54;
 }
+
 nav a:hover {
     text-decoration: none;
 }
@@ -81,8 +80,8 @@ main {
     padding: 15px 5px;
     border: 1px solid silver;
     border-radius: 5px;
-    background-color: #99ff99;
-    color: darkgreen;
+    background-color: #FCFFF5;
+    color: #023E54;
     box-shadow: -4px 5px 6px #333;
 }
 
@@ -172,6 +171,7 @@ main > div {
     width: 10%;
     height: 10%;
     margin: 5px;
+    border: 1px dashed #023E54;
 }
 
 #currentFoods {
@@ -179,54 +179,49 @@ main > div {
 }
 
 .introparagraph {
-    text-align: left;
-    font-size: 24px;
+    font-family: 'Cantarell', sans-serif;
+    text-align: center;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
 
+.bodyparagraph {
+    font-family: 'Cantarell', sans-serif;
+    margin-top: 5px;
+    text-align: left;
 }
 
 .introparagraph::first-letter {
     font-size: 200%;
-    color: green;
+    color: #023E54;
     font-weight: bolder;
 }
 
 .introheader {
-    color: darkgreen;
+    color: #023E54;
     font-weight: bolder;
-}
-
-.landingbody {
-    color: darkgreen;
 }
 
 ul {
     list-style: none;
     text-align: left;
-    font-weight: bold;
-    margin-top: 25%;
+/*    font-weight: bold;*/
     font-size: 150%;
-    color: green;
 }
 
-li {
-    font-weight: normal;
-}
-
-.landingimg {
-    border: 1px solid green;
-    border-radius: 10%;
-    padding: 5px;
+.landingImg {
+    padding: 0px;
+    border: 1px solid #023E54;
 }
 
 img.img-responsive {
     box-sizing: border-box;
-    margin-left: 15%;
-    margin: 5px;
-    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
     margin-top: 10px;
-    border: 1px solid green;
+    border: 1px solid #023E54;
     border-radius: 10%;
-    padding: 5px;
 }
 
 .foodbuttons {
@@ -236,10 +231,14 @@ img.img-responsive {
     display: inline;
 }
 
+#randFoodButtons {
+    display: inline-block;
+}
+
 hr {
     margin-top: 1px;
     margin-bottom: 1px;
-    border-color: darkgreen;
+    border-color: #023E54;
 }
 
 .progress{
@@ -263,10 +262,11 @@ hr {
 .foodIcon {
     position: relative;
     margin-top: 10px;
-    border: 1px solid green;
+    border: 1px solid #023E54;
     border-radius: 10%;
     padding: 5px;
-    opacity: 0.5;
+    opacity: 0.6;
+    background-color: #FFF;
 }
 
 .foodIcon:hover {
@@ -322,19 +322,6 @@ hr {
   font-style: oblique;
   letter-spacing: 0.5px;
 }
-h4{
-  text-align: left;  
-  border-bottom: 1px green solid;
-  width: 10%;
-}
-
-h3 {
-    font-weight: bolder;
-}
-
-h2 {
-    font-style: italic;
-}
 
 .subheader {
   text-align: center;
@@ -357,4 +344,31 @@ h2 {
 
 .ttlRemove {
     color: red;
+}
+
+.glyphicon:hover {
+    cursor: pointer;
+}
+
+.servingsTotal .randBtn {
+    background-color: whitesmoke;
+    border: 1px solid #023E54;
+    border-radius: 10px;
+    outline: none;
+}
+
+.servingsTotal .randBtn:hover {
+    box-shadow: -1px 1.5px 3px #333;
+}
+
+.servingsTotal .randBtn:active {
+    padding-top: 8px;
+    padding-left: 10px;
+    outline: none;
+    outline-offset: 0px;
+    box-shadow: -.5px 1px 3px #333;
+}
+
+#foodGrpServingList {
+    font-size: 1.2em;
 }

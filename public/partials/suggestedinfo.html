@@ -1,4 +1,4 @@
-<span ng-if="selected.value === $index">
+<div ng-if="selected.value === $index">
     <ul class="nutrList">
 	    <li><strong>Serving</strong>: {{item.servSize}}</li>
 	    <li><strong>Calories</strong>: {{item.cal}}</li>
@@ -6,6 +6,8 @@
 	    <li><strong>Protein</strong>: {{item.protein}}g</li>
 	    <li><strong>Fats</strong>: {{item.fat}}g</li>
     </ul>
-    <button class="btn btn-success foodbuttons" ng-click="addItem(item); selected.value = null;">+</button>
-    <button class="btn btn-danger foodbuttons" ng-click="selected.value = null">-</button>
-</span>
+    <span id="randFoodButtons">
+    	<button class="btn btn-success" ng-click="addItem(item); selected.value = null;">+</button>
+    	<button class="btn btn-danger randFoodButtons" ng-click="selected.value = null">-</button>
+    </span>
+</div>

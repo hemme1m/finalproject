@@ -1,64 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-   		 <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Landing Page</title>        
-        <link rel="stylesheet" href="libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="libs/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="styles.css">
-       
-	
-    
-  </head>
-
-  <body class="landingbody">
-
-	<div id="headerwrap">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<h1 class="introheader">Plan Healthy Meals With Ease</h1>
-					<h2 class="introheader">Meet Your Macronutrient Requirements</h2>
-					<h3 class="introparagraph">Macronutrients are the main component of a balanced diet.  Our bodies require larger amounts of macronutrients than micronutrients like vitamins. The three macronutrients are: carbohydrates, protein, and fat. Each performs vital functions in the body.  Make sure you're reaching healthy nutritional goals with the Meet Your Macros app.</h3>
-					<hr>
-				</div><!-- /col-xs-12 -->
-			</div>
-			<div class="row">
-				<div class="col-sm-6 landingImg">
-					<img class="img-responsive" src="imgs/foodPyramid.png" alt="food pyramid">
-					<ul>
-						<h3>Food Group Requirements</h3>
-						<li>. . .</li>
-					</ul>
-				</div><!-- /col-sm-6 -->
-				<div class="col-sm-6 landingImg">
-					<img class="img-responsive" src="imgs/macronutrients.jpg" alt="micronutrient graph">
-					<ul>
-						<h3>Macronutrient Ratio Goals</h3>
-						<li>Carbs: 50%</li>
-						<li>Protein: 30%</li>
-						<li>Fats: 20%</li>
-					</ul>
-				</div><!-- /col-sm-6 -->
-			</div><!-- /row -->
-			<div class="row">
-				<div class="col-xs-12">
-				<hr>
-					<h1 class="introheader">Choose Your Selection</h1>
-				</div>
-			</div><!-- /row -->
-			<div class="row">
-				<div class="col-sm-6">
-					<a href="#!/grps/all"><h3>Log Your Foods</h3>
-					<img class="landingimg" src="imgs/log.jpg " alt="food log img"></a>
-				</div>
-				<div class="col-sm-6">
-					<a href="#!/suggestions"><h3>Random Food Suggestions</h3>
-					<img class="landingimg" src="imgs/randomFood.jpg" alt="random food img"></a>
-				</div>
-			</div><!-- /row -->
-		</div><!-- /container -->	
-  </body>
-</html>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1 class="introheader">PLAN HEALTHY MEALS WITH EASE</h1>
+			<h2 class="introheader">MEET YOUR MACROS</h2>
+			<p class="introparagraph">Macronutrients are the main component of a balanced diet.  Our bodies require larger amounts of macronutrients than micronutrients like vitamins. The three macronutrients are: carbohydrates, protein, and fat. Each performs vital functions in the body.  Make sure you're reaching healthy nutritional goals with the Meet Your Macros app.</p>
+			<hr>
+		</div><!-- /col-xs-12 -->
+	</div>
+	<div class="row">
+		<div class="col-sm-6">
+			<img class="img-responsive" src="imgs/foodPyramid.png" alt="food pyramid">
+			<ul id="foodGrpServingList">
+				<h3>Daily Food Group Requirements</h3>
+				<li>Grains: 6-11 Servings</li>
+				<li>Fruits: 2-4 Servings</li>
+				<li>Vegetables: 3-5 Servings</li>
+				<li>Protein: 2-3 Servings</li>
+				<li>Dairy: 2-3 Servings</li>
+				<li>Fats: Use Sparingly</li>
+			</ul>
+		</div><!-- /col-sm-6 -->
+		<div class="col-sm-6">
+			<ul>
+				<h3>Macronutrient Ratio Goals</h3>
+				<li>Carbs: 50%</li>
+				<li>Protein: 30%</li>
+				<li>Fats: 20%</li>
+			</ul>
+			<img class="img-responsive" src="imgs/macronutrients.jpg" alt="micronutrient graph">
+			<p class="bodyparagraph">The 50/30/20 ratio provides a healthy balance of macronutrients in your diet. However, not every body type is the same, and different people with different body types (especially if you're exercising regularly) may want to fine tune macronutrient ratios. <a href="http://thescienceofeating.com/food-combining-how-it-works/workouts-for-all-areas/the-3-body-types-explained/">Read more about the three main body types here.</a></p>
+		</div><!-- /col-sm-6 -->
+	</div><!-- /row -->
+	<div class="row">
+		<div class="col-xs-12">
+		<hr>
+			<h1 class="introheader">Choose Your Selection</h1>
+		</div>
+	</div><!-- /row -->
+	<div class="row">
+		<div class="col-sm-6">
+			<a href="#!/grps/all"><div>
+				<img class="landingImg" src="imgs/log.jpg " alt="food log img">
+				<h3>Log Your Foods</h3>
+			</div></a>
+		</div>
+		<div class="col-sm-6">
+			<a href="#!/suggestions"><div>
+				<img class="landingImg" src="imgs/randomFood.jpg" alt="random food img">
+				<h3>Random Food Suggestions</h3>
+			</div></a>
+		</div>
+	</div><!-- /row -->
+</div><!-- /container -->

@@ -111,20 +111,20 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
         var grainServings = 0;
         var proteinServings = 0;
         var vegServings = 0;
+        servingTotals = {dairyServings, fruitServings, grainServings, proteinServings, vegServings};
+
         foods.forEach(function(food) {
             if (food.foodgroup === "dairy") {
-                dairyServings++;
+                servingTotals.dairyServings++;
             } else if (food.foodgroup === "fruit") {
-                fruitServings++;
+                servingTotals.fruitServings++;
             } else if (food.foodgroup === "grains") {
-                grainServings++;
+                servingTotals.grainServings++;
             } else if (food.foodgroup === "proteins") {
-                proteinServings++;
+                servingTotals.proteinServings++;
             } else if (food.foodgroup === "vegetable") {
-                vegServings++;
+                servingTotals.vegServings++;
             }
-
-            servingTotals = {dairyServings, fruitServings, grainServings, proteinServings, vegServings};
             return servingTotals;
         });
     };
