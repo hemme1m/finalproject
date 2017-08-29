@@ -10,6 +10,7 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
     $scope.randGrainItems = [];
     $scope.randProteinItems = [];
     $scope.randVegItems = [];
+    $scope.randMealItems = [];
 
     $scope.dairyBar = 0;
 
@@ -20,6 +21,7 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
 	$scope.proteinItems = foodSelectionService.getProteinItems();
 	$scope.vegItems = foodSelectionService.getVegItems();
     $scope.allItems = $scope.dairyItems.concat($scope.fatItems).concat($scope.fruitItems).concat($scope.grainItems).concat($scope.proteinItems).concat($scope.vegItems);
+    $scope.randomMeals = foodSelectionService.getRandomMeals();
 
     foodSelectionService.getAllItems().then(function(items) {
         $scope.items = items;
@@ -83,6 +85,16 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
             };
         };
     };
+
+    $scope.randMeals = function() {
+        var randomMeal = [];
+        $scope.randMealItems = [];
+            randomMeal = $scope.randomMeals[Math.floor(Math.random() * $scope.randomMeals.length)];
+            if (!$scope.randMealItems.includes(randMeal)) {
+                $scope.randMealItems.push(randMeal);
+            };
+    };
+    
 
     $scope.randDairy();
     $scope.randFruit();

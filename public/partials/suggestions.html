@@ -108,3 +108,18 @@
         </div>
     </div>
 </div>
+
+
+<div>
+    <button class="btn randBtn" ng-click="randMeals()">Randomize Meals</button>
+</div>
+<div class="col-xs-8 suggestedRow">
+            <div class="randomFoodIcons" ng-repeat="item in randMealItems track by $index">
+                <span ng-click="selected.value = $index">
+                <img ng-src="{{item.img}}">
+                <p>{{item.name}}</p>
+                </span>
+                <suggested-info></suggested-info>
+            </div>
+</div>
+
