@@ -175,8 +175,8 @@ main > div {
 }
 
 .rtimages {
-    width: 10%;
-    height: 10%;
+    width: 60px;
+    height: 60px;
     margin: 5px;
     border: 1px dashed #023E54;
 }
