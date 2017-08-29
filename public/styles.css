@@ -131,6 +131,10 @@ main > div {
     display: block;
 }
 
+.dropdown-content a:target {
+    display: none;
+}
+
 .container  {
     max-width: 100%;
 }
