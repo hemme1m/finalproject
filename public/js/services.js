@@ -200,6 +200,70 @@ app.factory("foodSelectionService", function($http) {
 		return vegItems;
 	};
 
+	function getRandomMeals (){
+		var presets = [
+			[
+				{name: "Chicken Breast", servings: 1, servSize: "1 cup", group: "proteins",
+				cal: 231, carbs: 0, protein: 43, fat: 5, meal: ['lunch', 'dinner'], img: "imgs/proteins/chicken.jpeg"}, 
+				{name: "Broccoli", servings: 1, servSize: "1 cup", group: "vegetable",
+				cal: 30, carbs: 5.8, protein: 2.5, fat: 0.3, meal: ["lunch","dinner"], img: "imgs/veg/broccoli.jpeg"}, 
+				{name: "Brown Rice", servings: 1, servSize: "1 cup", group: "grains",
+				cal: 216, carbs: 45, protein: 5, fat: 1.8, meal: ['lunch', 'dinner'], img: "imgs/grains/brownrice.jpeg"}  
+			],
+			[
+				{name: "Eggs", servings: 1, servSize: "2 large eggs", group: "proteins",
+				cal: 156, carbs: 1.2, protein: 12, fat: 10, meal: ['breakfast', 'lunch'], img: "imgs/proteins/eggs.jpeg"},
+				{name: "Pork Bacon", servings:1, servSize: "2 slices", group: "proteins",
+				cal: 180, carbs: 0, protein: 3, fat: 19, meal: ['dinner'], img: "imgs/proteins/bacon.jpg"},
+				{name: "Cherries", servings: 1, servSize: "100g", group: "fruit",
+				cal: 50, carbs: 12, protein: 1, fat: 0.3, meal: ['breakfast','lunch'], img: "imgs/fruits/cherries.jpeg"}
+				{name: "English Muffin", servings: 1, servSize: "1 cup", group: "grains",
+				cal: 134, carbs: 26, protein: 4.4, fat: 1, meal: ['breakfast'], img: "imgs/grains/englishmuffins.jpeg"},
+			],
+			[
+				{name: "Oatmeal", servings: 1, servSize: "1/2 cup", group: "grains",
+				cal: 150, carbs: 27, protein: 5, fat: 3, meal: ['breakfast'], img: "imgs/grains/oatmeal.jpeg"},
+				{name: "Strawberries", servings: 1, servSize: "147g", group: "fruit",
+				cal: 48, carbs: 11, protein: 1, fat: 0.4, meal: ['breakfast','lunch'], img: "imgs/fruits/strawberries.jpeg"},
+				{name: "Maple Syrup", servings: 1, servSize: "1 tsp", group: "fats and sugar",
+				cal: 52, carbs: 13, protein: 0, fat: 0, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/fats/maplesyrup.jpg"},
+			],
+			[
+				{name: "Potato", servings: 1, servSize: "1 cup", group: "vegetable",
+				cal: 108, carbs: 23.9, protein: 2.8, fat: 0.2, meal: ["lunch", "dinner"], img: "imgs/veg/potatoes.jpeg"},
+				{name: "Sirloin", servings: 1, servSize: "3 oz", group: "proteins",
+				cal: 207, carbs: 0, protein: 23, fat: 12, meal: ['dinner'], img: "imgs/proteins/steak.jpeg"},
+				{name: "Cabbage", servings: 1, servSize: "1 cup", group: "vegetable",
+				cal: 21, carbs: 5, protein: 1.3, fat: 0.1, meal: ["lunch", "dinner"], img: "imgs/veg/cabbage.jpeg"}
+			],
+			[
+				{name: "Plain Bagel", servings: 1, servSize: "1 bagel", group: "grains",
+				cal: 300, carbs: 26, protein: 15, fat: 16, meal: ['breakfast', 'lunch'], img: "imgs/grains/bagels.jpeg"},
+				{name: "Cream Cheese", servings: 1, servSize: "1oz", group: "dairy",
+				cal: 100, carbs: 1, protein: 2, fat: 10, meal: ['breakfast'], img: "imgs/dairy/creamcheese.jpeg"},
+				{name: "Almond Milk", servings: 1, servSize: "1 cup", group: "dairy",
+				cal: 30, carbs: 1, protein: 1, fat: 2.5, meal: ['breakfast', 'lunch', 'dinner'], img: "imgs/dairy/almondmilk.jpeg"},
+				{name: "Banana", servings: 1, servSize: "126g", group: "fruit",
+				cal: 112, carbs: 29, protein: 1.4, fat: 0.4, meal: ['breakfast','lunch'], img: "imgs/fruits/banana.jpeg"}
+			],
+			[
+				{name: "Corn Tortilla", servings: 1, servSize: "2 tortillas", group: "grains",
+				cal: 110, carbs: 22, protein: 2, fat: 1.5, meal: ['lunch', 'dinner'], img: "imgs/grains/corntortilla.jpeg"},
+				{name: "Ground Beef", servings: 1, servSize: "1 oz", group: "proteins",
+				cal: 93, carbs: 0, protein: 4, fat: 8, meal: ['dinner'], img: "imgs/proteins/beef.jpeg"},
+				{name: "Lettuce", servings: 1, servSize: "2 cups", group: "vegetable",
+				cal: 11, carbs: 2, protein: 1, fat: 0.1, meal: ["lunch", "dinner"], img: "imgs/veg/lettuce.jpeg"},
+				{name: "Tomato", servings: 1, servSize: "1 cup", group: "vegetable",
+				cal: 32, carbs: 7.1, protein: 1.6, fat: 0.4, meal: ["breakfast", "lunch", "dinner"], img: "imgs/veg/tomatoes.jpeg"},
+				{name: "Black Beans", servings: 1, servSize: "1 cup", group: "vegetable",
+				cal: 227, carbs: 40.8, protein: 15.2, fat: 0.9, meal: ["lunch", "dinner"],  img: "imgs/veg/blackbeans.jpeg"},
+				{name: "Avocado", servings: 1, servSize: "1/3 avocado", group: "vegetable",
+				cal: 84, carbs: 4.3, protein: 1, fat: 7.7, meal: ["breakfast", "lunch", "dinner"], img: "imgs/veg/avocado.jpeg"}
+			]
+		];
+		return presets;
+	};
+
 	function addItem(item) {
 		return $http.post("/api/items", item);
 		console.log("service: item added");
@@ -248,6 +312,7 @@ app.factory("foodSelectionService", function($http) {
 		saveCurrentLog: saveCurrentLog,
 		loadSavedLog: loadSavedLog,
 		newLog: newLog,
-		deleteItem: deleteItem
+		deleteItem: deleteItem,
+		getRandomMeals: getRandomMeals
 	};
 });
