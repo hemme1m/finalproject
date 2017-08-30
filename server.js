@@ -57,6 +57,18 @@ app.post("/api/items", function(req, res){
 	});
 });
 
+app.post("/api/items/randommeals", function(req, res){
+	var sql = "INSERT INTO nutrientlog (name, servings, servsize, foodgroup, cal, carbs, protein, fat, image) VALUES ($1::text, $2::int, $3::text, $4::text, $5::float, $6::float, $7::float, $8::float, $9::text)";
+	var values = [req.body.name, req.body.servings, req.body.servSize, req.body.group, req.body.cal, req.body.carbs, req.body.protein, req.body.fat, req.body.img]; 
+	pool.query(sql, values).then(function(result){
+		res.status(201).send("added item.");
+	}).catch(function(err){
+		console.log(err);
+		res.status(500);
+		res.send("Server Error");
+	});
+});
+
 app.delete("/api/items", function(req, res){
 	pool.query("DELETE FROM nutrientlog WHERE logday IS NULL").then(function(result){
 		res.send("Deleted current log.");

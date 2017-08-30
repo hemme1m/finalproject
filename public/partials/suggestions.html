@@ -109,17 +109,27 @@
     </div>
 </div>
 
-
-<div>
-    <button class="btn randBtn" ng-click="randMeals()">Randomize Meals</button>
-</div>
-<div class="col-xs-8 suggestedRow">
-            <div class="randomFoodIcons" ng-repeat="item in randMealItems track by $index">
-                <span ng-click="selected.value = $index">
-                <img ng-src="{{item.img}}">
-                <p>{{item.name}}</p>
-                </span>
-                <suggested-info></suggested-info>
+    <div class="row"> 
+        <div class="col-xs-4 servingsTotal">
+            <h2 class="rowHeading">Random Meals</h2>
+            
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:{{proteinBar}}%">
+                </div>
             </div>
-</div>
+
+            <div>
+             <button class="btn randBtn" ng-click="randMeals()">Randomize Meals</button>
+            </div>
+
+            <div class="col-xs-8 suggestedRow">
+                <div class="randomFoodIcons" ng-repeat="item in randMealItems track by $index">
+                    <span ng-click="selected.value = $index" ng-repeat="i in item">
+                    <img ng-src="{{i.img}}">
+                    <p>{{i.name}}</p>
+                    </span>
+                    <suggested-info></suggested-info>
+                </div>
+        </div>
+    </div>
 

@@ -195,6 +195,7 @@ main > div {
     font-size: 200%;
     color: #023E54;
     font-weight: bolder;
+    line-height: normal;
 }
 
 .introheader {

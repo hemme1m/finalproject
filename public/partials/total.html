@@ -43,6 +43,19 @@
     </select><br>
     <button type="button" class="btn btn-success" ng-click="saveCurrentLog()">Save Current Log</button>
 </div>
+<div class="logToggle">
+    <select class="input-large input-large-altered" ng-model="logday">
+        <option value="" disable selected>Select a day</option>
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+    </select><br>
+<button type="button" class="btn btn-info" ng-click="addMeals()">Load Random Meal Plan</button>
+</div>
 <button type="button" class="btn btn-info" ng-click="newLog()">Start/Resume Log</button>
 <button type="button" class="btn btn-danger" ng-click="clearLog()">Delete Current Log</button>
 <div class="logToggle">

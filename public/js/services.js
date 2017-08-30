@@ -201,7 +201,7 @@ app.factory("foodSelectionService", function($http) {
 	};
 
 	function getRandomMeals (){
-		var presets = [
+		var mealItems = [
 			[
 				{name: "Chicken Breast", servings: 1, servSize: "1 cup", group: "proteins",
 				cal: 231, carbs: 0, protein: 43, fat: 5, meal: ['lunch', 'dinner'], img: "imgs/proteins/chicken.jpeg"}, 
@@ -216,7 +216,7 @@ app.factory("foodSelectionService", function($http) {
 				{name: "Pork Bacon", servings:1, servSize: "2 slices", group: "proteins",
 				cal: 180, carbs: 0, protein: 3, fat: 19, meal: ['dinner'], img: "imgs/proteins/bacon.jpg"},
 				{name: "Cherries", servings: 1, servSize: "100g", group: "fruit",
-				cal: 50, carbs: 12, protein: 1, fat: 0.3, meal: ['breakfast','lunch'], img: "imgs/fruits/cherries.jpeg"}
+				cal: 50, carbs: 12, protein: 1, fat: 0.3, meal: ['breakfast','lunch'], img: "imgs/fruits/cherries.jpeg"},
 				{name: "English Muffin", servings: 1, servSize: "1 cup", group: "grains",
 				cal: 134, carbs: 26, protein: 4.4, fat: 1, meal: ['breakfast'], img: "imgs/grains/englishmuffins.jpeg"},
 			],
@@ -261,13 +261,18 @@ app.factory("foodSelectionService", function($http) {
 				cal: 84, carbs: 4.3, protein: 1, fat: 7.7, meal: ["breakfast", "lunch", "dinner"], img: "imgs/veg/avocado.jpeg"}
 			]
 		];
-		return presets;
+		return mealItems;
 	};
 
 	function addItem(item) {
 		return $http.post("/api/items", item);
 		console.log("service: item added");
 	};
+
+	function addMeals(items) {
+		return $http.post("/api/items", items);
+		console.log("service: random meals added");
+	}
 
 	function getAllItems() {
 		return $http.get("/api/items").then(function(response) {
@@ -313,6 +318,7 @@ app.factory("foodSelectionService", function($http) {
 		loadSavedLog: loadSavedLog,
 		newLog: newLog,
 		deleteItem: deleteItem,
-		getRandomMeals: getRandomMeals
+		getRandomMeals: getRandomMeals,
+		addMeals : addMeals
 	};
 });

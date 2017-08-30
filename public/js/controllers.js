@@ -21,7 +21,7 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
 	$scope.proteinItems = foodSelectionService.getProteinItems();
 	$scope.vegItems = foodSelectionService.getVegItems();
     $scope.allItems = $scope.dairyItems.concat($scope.fatItems).concat($scope.fruitItems).concat($scope.grainItems).concat($scope.proteinItems).concat($scope.vegItems);
-    $scope.randomMeals = foodSelectionService.getRandomMeals();
+    $scope.mealItems = foodSelectionService.getRandomMeals();
 
     foodSelectionService.getAllItems().then(function(items) {
         $scope.items = items;
@@ -89,10 +89,12 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
     $scope.randMeals = function() {
         var randomMeal = [];
         $scope.randMealItems = [];
-            randomMeal = $scope.randomMeals[Math.floor(Math.random() * $scope.randomMeals.length)];
-            if (!$scope.randMealItems.includes(randMeal)) {
-                $scope.randMealItems.push(randMeal);
+            randomMeal = $scope.mealItems[Math.floor(Math.random() * $scope.mealItems.length)];
+            if (!$scope.randMealItems.includes(randomMeal)) {
+                $scope.randMealItems.push(randomMeal);
             };
+            //console.log(randomMeal);
+            console.log($scope.randMealItems);
     };
     
 
@@ -171,6 +173,20 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
             });
         });
     };
+
+    $scope.addMeals = function(item) {
+        foodSelectionService.addMeals(item).then(function(){
+
+            foodSelectionService.getAllItems().then(function(items) {
+                $scope.items = items;
+                getServingTotals(items);
+                getTotals(items);
+                recalculateItems();
+            });
+            console.log(item);
+        });
+       
+    };    
 
     $scope.deleteItem = function (item) {
         foodSelectionService.deleteItem(item.id).then(function() {
