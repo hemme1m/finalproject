@@ -184,11 +184,11 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
     };
 
     $scope.saveCurrentLog = function() {
-        foodSelectionService.saveCurrentLog($scope.logday);
+        foodSelectionService.saveCurrentLog($scope.logday.toISOString().substring(0, 10));
     };
 
     $scope.loadSavedLog = function() {
-        foodSelectionService.loadSavedLog($scope.savedLogday).then(function(items) {
+        foodSelectionService.loadSavedLog($scope.savedLogday.toISOString().substring(0, 10)).then(function(items) {
             $scope.items = items;
             getServingTotals(items);
             getTotals(items);
