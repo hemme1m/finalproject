@@ -134,18 +134,20 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
         $scope.carbTotal = totals.carbTotal;
         $scope.proteinTotal = totals.proteinTotal;
         $scope.fatTotal = totals.fatTotal;
+        $scope.nutrientTotal = totals.carbTotal + totals.proteinTotal + totals.fatTotal;
         $scope.dairyServings = servingTotals.dairyServings;
         $scope.fruitServings = servingTotals.fruitServings;
         $scope.grainServings = servingTotals.grainServings;
         $scope.proteinServings = servingTotals.proteinServings;
         $scope.vegServings = servingTotals.vegServings;
-        $scope.dairyBar = ($scope.dairyServings / 3) * 100;
+        $scope.dairyBar = ($scope.dairyServings / 2) * 100;
         $scope.grainBar = ($scope.grainServings / 6) * 100;
         $scope.fruitBar = ($scope.fruitServings / 2) * 100;
         $scope.vegBar = ($scope.vegServings / 3) * 100;
         $scope.proteinBar = ($scope.proteinServings / 2) * 100;
-        $scope.foodLabels = ["Carbohydrates", "Protein", "Fat"];
-        $scope.foodData = [$scope.carbTotal, $scope.proteinTotal, $scope.fatTotal];
+        $scope.foodLabels = ["Carbohydrates (%)", "Protein (%)", "Fat (%)"];
+        $scope.foodData = [(($scope.carbTotal / $scope.nutrientTotal) * 100).toFixed(2), 
+        (($scope.proteinTotal / $scope.nutrientTotal) * 100).toFixed(2), (($scope.fatTotal / $scope.nutrientTotal) * 100).toFixed(2)];
     };
 
     $scope.addItem = function(item) {

@@ -120,7 +120,8 @@ main > div {
     max-width: 100%;
 }
 
-table {
+#logTable {
+    text-align: left;
     font-size: 1.0em;
 }
 
@@ -152,8 +153,8 @@ table {
 
 .introparagraph {
     font-family: 'Cantarell', sans-serif;
-    text-align: center;
-    font-size: 1.4em;
+    text-align: justify;
+    font-size: 1.5em;
     margin-bottom: 15px;
 }
 
@@ -167,6 +168,7 @@ table {
     font-size: 200%;
     color: #023E54;
     font-weight: bolder;
+    line-height: 1em;
 }
 
 .introheader {
