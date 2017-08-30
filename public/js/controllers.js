@@ -150,7 +150,6 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
 
     $scope.addItem = function(item) {
         foodSelectionService.addItem(item).then(function(){
-
             foodSelectionService.getAllItems().then(function(items) {
                 $scope.items = items;
                 getServingTotals(items);
@@ -173,7 +172,6 @@ app.controller("foodGrpController", function($scope, foodSelectionService) {
 
     $scope.clearLog = function(){
         foodSelectionService.deleteItems().then(function(){
-
             foodSelectionService.getAllItems().then(function(items) {
                 $scope.items = items;
                 getServingTotals(items);

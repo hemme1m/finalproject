@@ -27,7 +27,7 @@
                 <td>{{item.carbs}}</td>
                 <td>{{item.protein}}</td>
                 <td>{{item.fat}}</td>
-                <td><span class="glyphicon glyphicon-remove-sign ttlRemove" ng-click="deleteItem(item)"></span></td>
+                <td><span ng-if="item.logday === null" class="glyphicon glyphicon-remove-sign ttlRemove" ng-click="deleteItem(item)"></span></td>
             </tr>
         </tbody>
     </table>
