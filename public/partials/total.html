@@ -29,6 +29,16 @@
                 <td>{{item.fat}}</td>
                 <td><span ng-if="item.logday === null" class="glyphicon glyphicon-remove-sign ttlRemove" ng-click="deleteItem(item)"></span></td>
             </tr>
+            <tr ng-if="items.length > 0" id="totalsRow">
+                <td>Totals</td>
+                <td></td>
+                <td></td>
+                <td>{{calTotal}}</td>
+                <td>{{carbTotal | number: 2}}g</td>
+                <td>{{proteinTotal | number: 2}}g</td>
+                <td>{{fatTotal | number: 2}}g</td>
+                <td></td>
+            </tr>
         </tbody>
     </table>
     <div class="row">
@@ -44,7 +54,7 @@
                 <button type="button" class="btn btn-default" ng-click="loadSavedLog()">Load Saved Log</button>
             </div>
             <button type="button" class="btn btn-info" ng-click="newLog()">Start/Resume Log</button>
-            <button type="button" class="btn btn-danger" ng-click="clearLog()">Delete Current Log</button>
+            <button type="button" class="btn btn-danger" ng-click="clearLog()">Delete Unsaved Log</button>
         </div>
     </div>
 </div>

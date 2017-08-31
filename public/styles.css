@@ -376,6 +376,10 @@ hr {
     display: none;
 }
 
+#totalsRow {
+    background-color: rgb(230, 248, 254);
+}
+
 @media (max-width: 767px) {
     .selectedFoodInfo {
         top: 0%;
