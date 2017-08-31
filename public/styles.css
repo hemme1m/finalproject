@@ -27,7 +27,7 @@ body {
 }
 
 header {
-    padding: 15px 5px;
+    padding-top: 15px;
     background-color: #FCFFF5;
     border: 1px solid silver;
     border-radius: 5px;
@@ -38,20 +38,39 @@ header {
 
 #pageHeader {
     text-align: center;
-    margin-bottom: 20px;
 }
 
-nav a {
-    color: #023E54;
+#mainHeader {
+    font-size: 60px;
 }
 
 nav a:hover {
     text-decoration: none;
 }
 
-nav ul, #totalsDisplay ul {
+nav a:active {
+    text-decoration: none;
+}
+
+nav li:active {
+    text-decoration: none;
+    text-shadow: -2px 2px 1px #F2F2F2;
+}
+
+#totalsDisplay ul {
     list-style: none;
     margin: 0 2px;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul {
+    border: 1px solid #023E54;
+    width: 100%;
+    border-radius: 3px;
+    list-style: none;
+    margin: 0;
     padding: 0;
     display: flex;
     justify-content: space-around;
@@ -284,6 +303,15 @@ hr {
     left: 20%;
     display: none;
     text-align: center;
+}
+
+.rtImageSpan.ng-enter {
+    animation: fadeIn 500ms;
+}
+
+.rtImageSpan.ng-enter-stagger {
+    transition-delay: 300ms;
+    transition-duration: 0s;
 }
 
 #legend-carb{
